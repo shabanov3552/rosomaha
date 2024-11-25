@@ -1,0 +1,52 @@
+<div class="products-slider">
+   <div class="products-slider__container">
+      <div class="products-slider__header">
+         <div class="products-slider__title">@@title</div>
+         <div class="products-slider__fraction"></div>
+      </div>
+      <div class="products-slider__slider swiper">
+         <div class="products-slider__wrapper swiper-wrapper">
+            <div class="products-slider__slide swiper-slide">
+               @@include('_product-card.htm',{
+               "src":"img/product-card__image-1.png",
+               "name":"Ветровка для осеннего отдыха"
+               })
+            </div>
+            <div class="products-slider__slide swiper-slide">
+               @@include('_product-card.htm',{
+               "src":"img/product-card__image-2.png",
+               "name":"Ветровка для хайкинга"
+               })
+            </div>
+            <div class="products-slider__slide swiper-slide">
+               @@include('_product-card.htm',{
+               "src":"img/product-card__image-3.png",
+               "name":"Куртка спортивная утепленная"
+               })
+            </div>
+            <div class="products-slider__slide swiper-slide">
+               @@include('_product-card.htm',{
+               "src":"img/product-card__image-4.png",
+               "name":"Костюм флисовый"
+               })
+            </div>
+            <div class="products-slider__slide swiper-slide">
+               @@include('_product-card.htm',{
+               "src":"img/product-card__image-5.png",
+               "name":"Ветровка для осеннего отдыха"
+               })
+            </div>
+         </div>
+      </div>
+      <button type="button" class="swiper-button-prev">
+         <svg>
+            <use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+         </svg>
+      </button>
+      <button type="button" class="swiper-button-next">
+         <svg>
+            <use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+         </svg>
+      </button>
+   </div>
+</div>

@@ -1,0 +1,117 @@
+@@include('html/_header.htm',{
+"title":"Главная",
+"modClass":"main-page"
+})
+
+<main class="page">
+   <div class="mp-first-block">
+      <div class="mp-fb-bg-slider swiper">
+         <div class="mp-fb-bg-slider__wrapper swiper-wrapper">
+            <div class="mp-fb-bg-slider__slide mp-fb-bg-slider__image-ibg swiper-slide"><img src="@img/mp-first-block-1.png" alt=""></div>
+            <div class="mp-fb-bg-slider__slide mp-fb-bg-slider__image-ibg swiper-slide"><img src="@img/mp-first-block-2.png" alt=""></div>
+            <div class="mp-fb-bg-slider__slide mp-fb-bg-slider__image-ibg swiper-slide"><img src="@img/mp-first-block-3.png" alt=""></div>
+            <div class="mp-fb-bg-slider__slide mp-fb-bg-slider__image-ibg swiper-slide"><img src="@img/mp-first-block-4.png" alt=""></div>
+         </div>
+      </div>
+      <div class="mp-fb-main-slider swiper">
+         <div class="mp-fb-main-slider__wrapper swiper-wrapper">
+            <div class="mp-fb-main-slider__slide swiper-slide">
+               <div class="mp-fb-main-slider__title">Когда нигде не жмет</div>
+               <div class="mp-fb-main-slider__text">Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Подзаголовок которое семь она необходимыми ты, переулка собрал назад скатился прямо журчит предложения вскоре власти родного гор силуэт если рукописи!</div>
+            </div>
+            <div class="mp-fb-main-slider__slide swiper-slide">
+               <div class="mp-fb-main-slider__title">Когда нигде не жмет</div>
+               <div class="mp-fb-main-slider__text">Комфортная зимняя спортивная коллекция</div>
+            </div>
+            <div class="mp-fb-main-slider__slide swiper-slide">
+               <div class="mp-fb-main-slider__title">Когда нигде не жмет</div>
+               <div class="mp-fb-main-slider__text">Комфортная зимняя спортивная коллекция</div>
+            </div>
+            <div class="mp-fb-main-slider__slide swiper-slide">
+               <div class="mp-fb-main-slider__title">Когда нигде не жмет</div>
+               <div class="mp-fb-main-slider__text">Комфортная зимняя спортивная коллекция</div>
+            </div>
+         </div>
+         <div class="swiper-pagination"></div>
+      </div>
+   </div>
+   <div class="mp-catalog">
+      <div class="mp-catalog__container">
+         <div data-showmore="items" class="mp-catalog__block mp-catalog__block_mans">
+            <div class="mp-catalog__block-title">Мужчинам</div>
+            <div data-showmore-content="4" class="mp-catalog__block-content">
+               <a href="" class="mp-catalog__link">Брюки</a>
+               <a href="" class="mp-catalog__link">Куртки</a>
+               <a href="" class="mp-catalog__link">Головные уборы</a>
+               <a href="" class="mp-catalog__link">Термобелье</a>
+               <a href="" class="mp-catalog__link">Головные уборы</a>
+               <a href="" class="mp-catalog__link">Брюки</a>
+               <a href="" class="mp-catalog__link">Куртки</a>
+               <a href="" class="mp-catalog__link">Головные уборы</a>
+               <a href="" class="mp-catalog__link">Термобелье</a>
+               <a href="" class="mp-catalog__link">Головные уборы</a>
+            </div>
+            <button hidden data-showmore-button type="button" class="mp-catalog__more"><span>смотреть все</span><span>скрыть</span></button>
+            <div class="mp-catalog__image-ibg"><img src="@img/mp-catalog-1.png" alt=""></div>
+         </div>
+         <div data-showmore="items" class="mp-catalog__block mp-catalog__block_womans">
+            <div class="mp-catalog__block-title">Женщинам</div>
+            <div data-showmore-content="4" class="mp-catalog__block-content">
+               <a href="" class="mp-catalog__link">Футболки</a>
+               <a href="" class="mp-catalog__link">Свитшоты</a>
+               <a href="" class="mp-catalog__link">Термобелье</a>
+               <a href="" class="mp-catalog__link">Костюмы</a>
+               <a href="" class="mp-catalog__link">Термобелье</a>
+            </div>
+            <button hidden data-showmore-button type="button" class="mp-catalog__more"><span>смотреть все</span><span>скрыть</span></button>
+            <div class="mp-catalog__image-ibg"><img src="@img/mp-catalog-2.png" alt=""></div>
+         </div>
+         <div data-showmore="items" class="mp-catalog__block mp-catalog__block_kids">
+            <div class="mp-catalog__block-title">Детям</div>
+            <div data-showmore-content="4" class="mp-catalog__block-content">
+               <a href="" class="mp-catalog__link">Брюки</a>
+               <a href="" class="mp-catalog__link">Куртки</a>
+               <a href="" class="mp-catalog__link">Головные уборы</a>
+               <a href="" class="mp-catalog__link">Термобелье</a>
+               <a href="" class="mp-catalog__link">Головные уборы</a>
+            </div>
+            <button hidden data-showmore-button type="button" class="mp-catalog__more"><span>смотреть все</span><span>скрыть</span></button>
+            <div class="mp-catalog__image-ibg"><img src="@img/mp-catalog-3.png" alt=""></div>
+         </div>
+      </div>
+   </div>
+
+   @@include('html/_products-slider.htm',{
+   "title":"Новинки"
+   })
+
+   <div class="mp-collection">
+      <div class="mp-collection__container">
+         <div class="mp-collection__block">
+            <div class="mp-collection__image-ibg"><img src="@img/mp-first-block-2.png" alt=""></div>
+            <div class="mp-collection__block-content">
+               <div class="mp-collection__title">Осень-Зима</div>
+               <div class="mp-collection__text">коллекция</div>
+               <a href="" class="mp-collection__link">
+                  <svg class="">
+                     <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                  </svg>
+               </a>
+            </div>
+         </div>
+         <div class="mp-collection__block">
+            <div class="mp-collection__image-ibg"><img src="@img/mp-first-block-3.png" alt=""></div>
+            <div class="mp-collection__block-content">
+               <div class="mp-collection__title">Весна-Лето</div>
+               <div class="mp-collection__text">коллекция</div>
+               <a href="" class="mp-collection__link">
+                  <svg class="">
+                     <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                  </svg>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

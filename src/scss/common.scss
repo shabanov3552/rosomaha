@@ -1,0 +1,65 @@
+// кнопки
+// <button class="button button_transparent-white"></button>
+// <button class="button button_transparent-black"></button>
+// <button class="button button_color-white"></button>
+// <button class="button button_color-black"></button>
+.button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 3px;
+   font-weight: 600;
+   font-size: 15px;
+   text-align: center;
+   padding-right: rem(10);
+   padding-left: rem(10);
+   padding-top: rem(9);
+   padding-bottom: rem(10);
+   border: 1px solid #000;
+   transition: all 0.3s ease 0s;
+
+   @media (max-width:$sm) {
+      .product-card & {
+         padding-right: rem(8);
+         padding-left: rem(8);
+      }
+   }
+
+   // .button_transparent-white
+
+   &_transparent-white {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: #000;
+            background: #fff;
+         }
+      }
+   }
+
+   // .button_transparent-black
+
+   &_transparent-black {
+      background: transparent;
+      color: #000;
+      border-color: #000;
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: #fff;
+            background: #000;
+         }
+      }
+   }
+
+   // .button_colored-white
+
+   &_color-white {}
+
+   // .button_colored-black
+
+   &_color-black {}
+}

@@ -1,0 +1,26 @@
+// ===============
+// colors palette
+// ===============
+:root {
+	--red-error: #ca2e33; // цвет ошибки в формах
+	--left-sidebar: 160px;
+	--frist-block-height: 860px;
+
+	@media (max-width:$pc) {
+		--frist-block-height: 584px;
+		--left-sidebar: 106px;
+	}
+
+	@media (max-width:$xl) {
+		--left-sidebar: 83px;
+	}
+
+	@media (max-width:$lg) {
+		--frist-block-height: 420px;
+		--left-sidebar: 0px;
+	}
+
+	@media (max-width:$sm) {
+		--frist-block-height: 352px;
+	}
+}
