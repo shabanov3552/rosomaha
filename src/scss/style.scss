@@ -56,6 +56,9 @@ $lg: em(991.98);
 // $mobile: em(767.98);
 $md: em(767.98);
 
+// $mobile: em(767.98);
+$md2: em(679.98);
+
 // $mobileMiddle: em(578.98);
 $sm: em(576.98);
 
@@ -99,6 +102,12 @@ body {
 	flex-direction: column;
 	overflow: hidden;
 	padding-left: var(--left-sidebar);
+
+	.page {
+		background-color: #fff;
+		position: relative;
+		z-index: 5;
+	}
 
 	@supports (overflow: clip) {
 		overflow: clip;
@@ -195,6 +204,10 @@ body {
 @import "common";
 
 // Подключение стилей отдельных блоков
+@import "left-sidebar";
+@import "sidebar-catalog";
+@import "search-modal";
+@import "mobile-catalog";
 @import "header";
 @import "footer";
 @import "products-slider";
@@ -202,3 +215,4 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "catalog";

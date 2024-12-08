@@ -1,5 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, bodyLockToggle, bodyLockStatus } from "./functions.js";
+import { isMobile, bodyLockToggle, bodyLockStatus, bodyLock, bodyUnlock } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
@@ -7,9 +7,9 @@ import { flsModules } from "./modules.js";
 
 document.addEventListener("click", function (e) {
    // открыть модалку каталога
-   if (bodyLockStatus && e.target.closest('.js-open-sidebar-catalog')) {
+   if (bodyLockStatus && e.target.closest('.js-open-mobile-catalog')) {
       bodyLockToggle();
-      document.documentElement.classList.toggle("sidebar-catalog-open");
+      document.documentElement.classList.toggle("mobile-catalog-open");
       if (window.matchMedia("(min-width: 991.98px)").matches && !isMobile.any()) {
          document.addEventListener("mouseover", sidebarCatalogActions);
          document.removeEventListener("click", sidebarCatalogActions);
@@ -19,13 +19,17 @@ document.addEventListener("click", function (e) {
       }
    }
    // закрыть модалку каталога
-   if (e.target.closest('.js-sidebar-catalog-close')) {
+   if (e.target.closest('.js-mobile-catalog-close')) {
       bodyLockToggle();
-      document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
+      document.documentElement.classList.remove("mobile-catalog-open", "sidebar-sub-catalog-open", 'menu-open');
    }
-   if (!e.target.closest('.sidebar-catalog') && document.querySelector('.sidebar-catalog-open') && !e.target.closest('.js-open-sidebar-catalog')) {
+   if (!e.target.closest('.mobile-catalog') && document.querySelector('.mobile-catalog-open') && !e.target.closest('.js-open-mobile-catalog')) {
       bodyLockToggle();
-      document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
+      document.documentElement.classList.remove("mobile-catalog-open", "sidebar-sub-catalog-open");
+   }
+   if (e.target.closest('.js-close-menu')) {
+      bodyUnlock();
+      document.documentElement.classList.remove("menu-open");
    }
    // очистка input по клику на крестик
    if (e.target.closest('.form__clear-svg')) {
@@ -51,6 +55,15 @@ document.addEventListener("click", function (e) {
       let target = e.target.closest('.order__more-btn')
       target.classList.contains('_spoller-active') ? target.innerHTML = 'Свернуть детали заказа' : target.innerHTML = 'Показать детали заказа';
       e.preventDefault()
+   }
+   // Открыть закрыть модалку поиска на мобилке
+   if (e.target.closest('.js-mobile-search-btn')) {
+      bodyLock();
+      document.documentElement.classList.add('search-open');
+   }
+   if (e.target.closest('.js-search-close')) {
+      bodyUnlock();
+      document.documentElement.classList.remove('search-open');
    }
 });
 
@@ -219,23 +232,23 @@ window.addEventListener("load", function (e) {
 
 //#region hover на ссылках в боковом каталоге
 
-const sidebarCatalogMenuChunk = document.querySelector('.sidebar-catalog__menu-chunk');
-if (sidebarCatalogMenuChunk !== null) {
-   const sidebarCatalogMenu = sidebarCatalogMenuChunk.querySelector('.sidebar-catalog__menu');
-   const sidebarRect = sidebarCatalogMenuChunk.querySelector('.sidebar-catalog__hover-rect')
-   sidebarCatalogMenuChunk.addEventListener('mouseover', (e) => {
-      let target = e.target.closest('.sidebar-catalog__link');
-      if (e.target.classList.contains('sidebar-catalog__link')) {
-         sidebarRect.style.bottom = `${sidebarCatalogMenu.offsetHeight - ((target.offsetTop + target.clientHeight) - sidebarCatalogMenu.scrollTop)}px`
-      }
-   })
-}
+// const sidebarCatalogMenuChunk = document.querySelector('.mobile-catalog__menu-chunk');
+// if (sidebarCatalogMenuChunk !== null) {
+//    const sidebarCatalogMenu = sidebarCatalogMenuChunk.querySelector('.mobile-catalog__menu');
+//    const sidebarRect = sidebarCatalogMenuChunk.querySelector('.mobile-catalog__hover-rect')
+//    sidebarCatalogMenuChunk.addEventListener('mouseover', (e) => {
+//       let target = e.target.closest('.mobile-catalog__link');
+//       if (e.target.classList.contains('mobile-catalog__link')) {
+//          sidebarRect.style.bottom = `${sidebarCatalogMenu.offsetHeight - ((target.offsetTop + target.clientHeight) - sidebarCatalogMenu.scrollTop)}px`
+//       }
+//    })
+// }
 
 //#endregion
 
 //#region Открыть/закрыть боковой каталог + Открытие закрытие подкатегорий в каталоге
 
-function sidebarCatalogActions(e) {
+export function sidebarCatalogActions(e) {
    if (e.target.closest('[data-parent]')) {
       const targetElement = e.target.closest('[data-parent]');
       const subMenuId = targetElement.closest('[data-parent]').dataset.parent ? targetElement.closest('[data-parent]').dataset.parent : null;
@@ -266,7 +279,7 @@ function sidebarCatalogActions(e) {
          }
       }
    }
-   if (e.target.closest('.js-sidebar-catalog-back')) {
+   if (e.target.closest('.js-mobile-catalog-back')) {
       document.documentElement.classList.remove('sidebar-sub-catalog-open');
       document.querySelector('._sub-menu-active') ? document.querySelector('._sub-menu-active').classList.remove('_sub-menu-active') : null;
       document.querySelector('._sub-menu-open') ? document.querySelector('._sub-menu-open').classList.remove('_sub-menu-open') : null;
@@ -455,5 +468,267 @@ function dropdownAction(e, ddWrapper, ddActive) {
       e.preventDefault();
    }
 }
+
+//#endregion
+
+//#region Анимация движения бокового каталога и поиска на десктопе
+
+class CatalogSidebar {
+   constructor(options, manager) {
+      const { animatedBackground, leftSidebar, catalogSidebar, catalogToggleButton, htmlClass, animationDuration } = options;
+
+      this.animatedBackground = document.querySelector(animatedBackground);
+      this.leftSidebar = document.querySelector(leftSidebar);
+      this.catalogSidebar = document.querySelector(catalogSidebar);
+      this.catalogToggleButton = document.querySelector(catalogToggleButton);
+      this.htmlClass = htmlClass;
+      this.htmlElement = document.documentElement;
+      this.manager = manager;
+
+      this.isAnimating = false; // Флаг для анимации
+      this.isCatalogOpen = false; // Состояние панели
+      this.animationDuration = animationDuration || 400; // Длительность анимации
+
+      if (!this.animatedBackground || !this.leftSidebar || !this.catalogSidebar || !this.catalogToggleButton) {
+         console.error('Не удалось найти все необходимые элементы для работы скрипта.');
+         return;
+      }
+
+      if (this.manager) {
+         this.manager.register(this);
+      }
+
+      this.bindEvents();
+   }
+
+   bindEvents() {
+      this.catalogToggleButton.addEventListener('click', () => this.toggleCatalog());
+   }
+
+   easeInOut(t) {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+   }
+
+   animateCatalogSidebar(startTime, callback) {
+      const currentTime = performance.now();
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / this.animationDuration, 1);
+      const easedProgress = this.easeInOut(progress);
+
+      const leftSidebarWidth = this.leftSidebar.offsetWidth;
+      const catalogSidebarWidth = this.catalogSidebar.offsetWidth;
+
+      const sidebarPosition = this.isCatalogOpen
+         ? -catalogSidebarWidth * easedProgress
+         : -catalogSidebarWidth + catalogSidebarWidth * easedProgress;
+
+      const backgroundWidth = this.isCatalogOpen
+         ? leftSidebarWidth + catalogSidebarWidth * (1 - easedProgress)
+         : leftSidebarWidth + catalogSidebarWidth * easedProgress;
+
+      this.catalogSidebar.style.left = `${sidebarPosition}px`;
+      this.animatedBackground.style.width = `${backgroundWidth}px`;
+
+      if (progress < 1) {
+         requestAnimationFrame(() => this.animateCatalogSidebar(startTime, callback));
+      } else {
+         this.finalizeAnimation();
+         if (callback) callback();
+      }
+   }
+
+   finalizeAnimation() {
+      this.isAnimating = false;
+      if (this.isCatalogOpen) {
+         this.htmlElement.classList.remove(this.htmlClass);
+      }
+      this.isCatalogOpen = !this.isCatalogOpen;
+   }
+
+   toggleCatalog() {
+      if (this.isAnimating) return;
+
+      if (this.manager) {
+         this.manager.togglePanel(this);
+      }
+   }
+
+   closeCatalog(callback) {
+      if (this.isCatalogOpen && !this.isAnimating) {
+         this.isAnimating = true;
+         const startTime = performance.now();
+         this.animateCatalogSidebar(startTime, () => {
+            if (callback) callback();
+         });
+      } else if (callback) {
+         callback();
+      }
+   }
+
+   openCatalog() {
+      if (!this.isCatalogOpen && !this.isAnimating) {
+         this.isAnimating = true;
+         this.htmlElement.classList.add(this.htmlClass);
+         const startTime = performance.now();
+         this.animateCatalogSidebar(startTime);
+      }
+   }
+
+   handleOutsideClick(event) {
+      if (
+         this.isCatalogOpen &&
+         !this.catalogSidebar.contains(event.target) &&
+         !this.catalogToggleButton.contains(event.target)
+      ) {
+         this.manager.closeAllExcept(null);
+      }
+   }
+}
+
+class CatalogSidebarManager {
+   constructor() {
+      this.instances = [];
+      this.isAnimating = false; // Глобальный флаг анимации
+      this.bindEvents();
+   }
+
+   register(instance) {
+      this.instances.push(instance);
+   }
+
+   closeAllExcept(activeInstance, callback) {
+      let remaining = this.instances.length;
+      let anyPanelOpen = false;
+
+      this.instances.forEach((instance) => {
+         if (instance.isCatalogOpen) {
+            anyPanelOpen = true;
+         }
+         if (instance !== activeInstance) {
+            instance.closeCatalog(() => {
+               remaining -= 1;
+               if (remaining === 0 && callback) callback();
+            });
+         } else {
+            remaining -= 1;
+         }
+      });
+
+      if (!anyPanelOpen) {
+         bodyUnlock(); // Разблокировка прокрутки, если ни одна панель не открыта
+      }
+
+      if (remaining === 0 && callback) callback();
+   }
+
+   togglePanel(activeInstance) {
+      if (this.isAnimating) return;
+
+      if (activeInstance.isCatalogOpen) {
+         this.isAnimating = true;
+         activeInstance.closeCatalog(() => {
+            bodyUnlock(); // Прокрутка разблокируется только при закрытии последней панели
+            this.isAnimating = false;
+         });
+      } else {
+         this.isAnimating = true;
+         this.closeAllExcept(activeInstance, () => {
+            bodyLock(); // Прокрутка блокируется при открытии новой панели
+            activeInstance.openCatalog();
+            this.isAnimating = false;
+         });
+      }
+   }
+
+   bindEvents() {
+      document.addEventListener('click', (event) => {
+         this.instances.forEach((instance) => instance.handleOutsideClick(event));
+      });
+   }
+}
+
+// Инициализация менеджера и панелей
+const sidebarManager = new CatalogSidebarManager();
+
+const catalogSidebar = new CatalogSidebar(
+   {
+      animatedBackground: '.animated-bg-ibg',
+      leftSidebar: '.left-sidebar',
+      catalogSidebar: '.sidebar-catalog__wrapper',
+      catalogToggleButton: '.js-catalog-btn',
+      htmlClass: 'sidebar-open',
+      animationDuration: 300,
+   },
+   sidebarManager
+);
+
+const searchSidebar = new CatalogSidebar(
+   {
+      animatedBackground: '.animated-bg-ibg',
+      leftSidebar: '.left-sidebar',
+      catalogSidebar: '.search-modal__wrapper',
+      catalogToggleButton: '.js-search-btn',
+      htmlClass: 'search-open',
+      animationDuration: 300,
+   },
+   sidebarManager
+);
+
+//#endregion
+
+//#region Анимация фона в подвале
+const footer = document.querySelector('.footer'); // Футер
+const animatedBg = document.querySelector('.animated-bg-ibg'); // Блок с картинкой
+const leftSidebar = document.querySelector('.left-sidebar');
+
+function moveImageWidth() {
+   const footerTop = footer.offsetTop; // Верх футера относительно документа
+   const footerBottom = footerTop + footer.offsetHeight; // Низ футера
+   const viewportHeight = window.innerHeight; // Высота окна браузера
+   const scrollPosition = window.scrollY; // Текущая прокрутка
+
+   if (window.matchMedia('(max-width:991.98px)').matches) {
+      animatedBg.style.zIndex = '';
+      animatedBg.style.width = '';
+      leftSidebar.style.top = '';
+      leftSidebar.style.bottom = '';
+      return
+   }
+   // Проверка, виден ли футер в окне
+   if (scrollPosition + viewportHeight < footerTop || scrollPosition > footerBottom) {
+      // Футер не виден: сброс стилей
+      animatedBg.style.zIndex = '';
+      animatedBg.style.width = '';
+      leftSidebar.style.top = '';
+      leftSidebar.style.bottom = '';
+      return;
+   }
+   // Футер виден: вычисляем прогресс
+   const startScroll = footerTop - viewportHeight; // Начало видимости футера
+   const endScroll = footerTop; // Верх футера касается верхней границы окна
+   const progress = Math.min(
+      Math.max((scrollPosition - startScroll) / (endScroll - startScroll), 0),
+      1
+   );
+
+   // Устанавливаем z-index, когда движение начинается
+   if (progress > 0) {
+      animatedBg.style.zIndex = '1';
+   }
+   // Получаем начальное значение переменной в пикселях
+   const leftSidebarWidth = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--left-sidebar'), 10);
+   const screenWidth = window.innerWidth; // Ширина экрана
+
+   // Рассчитываем новую ширину: от начальной до ширины экрана
+   const newWidth = leftSidebarWidth + progress * (screenWidth - leftSidebarWidth);
+
+   leftSidebar.style.top = `-${scrollPosition - startScroll}px`;
+   leftSidebar.style.bottom = `${scrollPosition - startScroll}px`;
+   animatedBg.style.width = `${newWidth}px`; // Применяем новое значение ширины
+}
+
+// Подключаем обработчик скролла
+window.addEventListener('scroll', moveImageWidth);
+moveImageWidth(); // Проверить при загрузке страницы
 
 //#endregion

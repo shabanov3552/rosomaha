@@ -1,5 +1,6 @@
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
+import { sidebarCatalogActions } from "./script.js"
 
 //#region Проверка поддержки webp, добавление класса webp или no-webp для HTML
 export function isWebp() {
@@ -430,6 +431,7 @@ export function menuInit() {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");
+				document.addEventListener("click", sidebarCatalogActions);
 			}
 		});
 	};
@@ -525,6 +527,7 @@ export function showMore(targetBlocks) {
 			const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 3;
 			const showMoreItems = showMoreContent.children;
 			if (showMoreContent.children.length <= showMoreTypeValue) {
+				console.log(showMoreItems);
 				return
 			}
 			for (let index = 1; index < showMoreItems.length; index++) {

@@ -20,11 +20,14 @@
 		<header class="header">
 			<div class="header__container">
 				<a href="" class="header__logo">
+					<svg class="header__logo-mobile">
+						<use xlink:href="img/icons/icons.svg#logo_sidebar"></use>
+					</svg>
 					<svg class="header__logo-image">
 						<use xlink:href="img/icons/icons.svg#logo_header"></use>
 					</svg>
 				</a>
-				<div class="header__contacts" data-da=".menu__body, 767.98">
+				<div class="header__contacts" data-da=".menu-mobile__header, 991.98, first">
 					<a href="mailto:rosomaha@mail.ru" class="header__link header__link_mail">
 						<svg class="header__link-icon">
 							<use xlink:href="img/icons/icons.svg#icon_mail"></use>
@@ -53,13 +56,32 @@
 						</svg>
 					</a>
 				</div>
-			</div>
-			<div class="header__menu menu">
-				<!-- <button type="button" class="menu__icon icon-menu"><span></span></button> -->
-				<nav class="menu__body">
-					<!-- <ul class="menu__list">
-						<li class="menu__item"><a href="" class="menu__link"></a></li>
-					</ul> -->
-				</nav>
+				<div class="header__menu menu-mobile">
+					<div class="menu-mobile__buttons">
+						<button type="button" class="menu-mobile__button-search js-mobile-search-btn">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon_search"></use>
+							</svg>
+						</button>
+						<button type="button" class="menu-mobile__icon icon-menu">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon_burger"></use>
+							</svg>
+						</button>
+					</div>
+					<nav class="menu-mobile__wrapper">
+						<div class="menu-mobile__header">
+							<button type="button" class="menu-mobile__close js-close-menu">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+								</svg>
+							</button>
+						</div>
+						<div class="menu-mobile__main">
+							<div class="menu-mobile__links"></div>
+							@@include('_mobile-catalog.htm',{})
+						</div>
+					</nav>
+				</div>
 			</div>
 		</header>

@@ -1,15 +1,84 @@
 <footer class="footer">
+	<div class="animated-bg-ibg"><img src="@img/animated-bg.png" alt=""></div>
+	@@include('./_left-sidebar.htm',{})
+	@@include('./_sidebar-catalog.htm',{})
+	@@include('./_search-modal.htm',{})
 	<div class="footer__container">
+		<div class="mp-footer-links"> <!-- Этот блок присутствует только на главной" -->
+			<a href="" class="mp-footer-links__item">
+				<span>Дилерам</span>
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
+				</svg>
+			</a>
+			<a href="" class="mp-footer-links__item">
+				<span>Розничный интернет-магазин</span>
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
+				</svg>
+			</a>
+			<a href="" class="mp-footer-links__item">
+				<span>Адреса <br> магазинов</span>
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
+				</svg>
+			</a>
+		</div>
+		<a href="" class="footer__logo"><img src="@img/logo-footer.svg" alt=""></a>
+		<div class="footer__main">
+			<div class="footer__menu">
+				<a href="" class="footer__menu-link">О бренде</a>
+				<a href="" class="footer__menu-link">Блог</a>
+				<a href="" class="footer__menu-link">Наши эксперты</a>
+				<a href="" class="footer__menu-link">Адреса магазинов</a>
+				<a href="" class="footer__menu-link">Для дилеров</a>
+				<a href="" class="footer__menu-link">Розничный интернет-магазин</a>
+				<a href="" class="footer__menu-link">Полезная информация</a>
+			</div>
+			<div class="footer__contacts">
+				<div class="footer__contacts-title">Контакты</div>
+				<div class="footer__contacts-links">
+					<a href="tel:88005007552" class="footer__contacts-link">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon_phone"></use>
+						</svg>
+						<span>8 800 500 75 52</span>
+					</a>
+					<a href="mailto:rosomaha@mail.ru" class="footer__contacts-link">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon_mail"></use>
+						</svg>
+						<span>rosomaha@mail.ru</span>
+					</a>
+				</div>
+			</div>
+			<div class="footer__social">
+				<div class="footer__social-title">Мы в соцсетях</div>
+				<div class="footer__social-links">
+					<a href="" class="footer__social-link">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon_telegram"></use>
+						</svg>
+					</a>
+					<a href="" class="footer__social-link">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon_vk"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="footer__mob-copyright"></div>
+		</div>
 		<div class="footer__bottom copyright">
 			<div class="copyright__wrapper">
 				<div class="copyright__body">
-					<div class="copyright__item">
+					<div class="copyright__item" data-da=".footer__mob-copyright, 679.98">
 						<span class="js-copyright-year">2023</span>
-						Название организации
+						© Росомаха
 						<script>window.onload = () => document.querySelector('.js-copyright-year').innerText = new Date().getFullYear();</script>
 					</div>
-					<a href="" data-popup="#policy" class="copyright__item">Политика конфиденциальности</a>
-					<a href="" data-popup="#consent" class="copyright__item">Согласие на обработку персональных данных</a>
+					<a href="" class="copyright__item" data-da=".footer__mob-copyright, 679.98">Политика конфиденциальности</a>
+					<a href="" class="copyright__item" data-da=".footer__mob-copyright, 679.98">Согласие на обработку персональных данных</a>
 					<a href="https://websalt.ru" target="_blank" class="copyright__item">Создание сайта
 						<svg class="copyright__svg">
 							<use xlink:href="img/icons/icons.svg#logo_salt"></use>

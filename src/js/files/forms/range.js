@@ -77,7 +77,7 @@ export function rangeInit(rangeSlider) {
 }
 
 
-const rangesSlidersFilters = document.querySelectorAll('.js-range');
+const rangesSlidersFilters = document.querySelectorAll('#range');
 rangesSlidersFilters.forEach(range => {
 	rangeInit(range);
 });

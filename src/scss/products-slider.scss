@@ -29,10 +29,34 @@
 
       .swiper-button-prev {
          left: -6px;
+
+         @media (max-width:em(1860)) {
+            left: 15px;
+         }
+
+         @media (max-width:$xl) {
+            left: 10px;
+         }
+
+         @media (max-width:$lg) {
+            left: 0px;
+         }
       }
 
       .swiper-button-next {
          right: -6px;
+
+         @media (max-width:em(1860)) {
+            right: 15px;
+         }
+
+         @media (max-width:$xl) {
+            right: 10px;
+         }
+
+         @media (max-width:$lg) {
+            right: 0px;
+         }
       }
    }
 
