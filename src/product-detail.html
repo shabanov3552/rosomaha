@@ -1,0 +1,396 @@
+@@include('html/_header.htm',{
+"title":"Деталка",
+"modClass":"product-detail-page"
+})
+
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="product-detail">
+         <div class="product-detail__main">
+            <div class="product-detail__slider">
+               <div class="product-detail-slider">
+                  <div class="product-detail-slider__sidebar">
+                     <div class="product-detail-slider__thumbs swiper">
+                        <div class="product-detail-slider__wrapper swiper-wrapper">
+                           <div class="product-detail-slider__slide swiper-slide"><img src="@img/detail-1.png" alt=""></div>
+                           <div class="product-detail-slider__slide swiper-slide"><img src="@img/detail-2.png" alt=""></div>
+                           <div class="product-detail-slider__slide swiper-slide"><img src="@img/detail-3.png" alt=""></div>
+                           <div class="product-detail-slider__slide swiper-slide"><img src="@img/detail-4.png" alt=""></div>
+                           <div class="product-detail-slider__slide swiper-slide"><img src="@img/detail-5.png" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="product-detail-slider__nav">
+                        <button type="button" class="swiper-button-prev">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_slider-up"></use>
+                           </svg>
+                        </button>
+                        <button type="button" class="swiper-button-next">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_slider-down"></use>
+                           </svg>
+                        </button>
+                     </div>
+                  </div>
+                  <div class="product-detail-slider__main swiper">
+                     <div class="product-detail-slider__wrapper swiper-wrapper" data-gallery>
+                        <a href="" class="product-detail-slider__slide swiper-slide" data-src="@img/detail-1.png"><img src="@img/detail-1.png" alt=""></a>
+                        <a href="" class="product-detail-slider__slide swiper-slide" data-src="@img/detail-2.png"><img src="@img/detail-2.png" alt=""></a>
+                        <a href="" class="product-detail-slider__slide swiper-slide" data-src="@img/detail-3.png"><img src="@img/detail-3.png" alt=""></a>
+                        <a href="" class="product-detail-slider__slide swiper-slide" data-src="@img/detail-4.png"><img src="@img/detail-4.png" alt=""></a>
+                        <a href="" class="product-detail-slider__slide swiper-slide" data-src="@img/detail-5.png"><img src="@img/detail-5.png" alt=""></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="product-detail__content">
+               <div class="product-detail__labels">
+                  <span class="product-detail__label product-detail__label_pink">Новинка</span>
+                  <span class="product-detail__label product-detail__label_blue">Хит</span>
+               </div>
+               <div class="product-detail__name">Куртка женская флисовая «Катунь» красная</div>
+               <div class="product-detail__row">
+                  <div class="product-detail__article">Артикул: 2632</div>
+                  <button type="button" id="share-button" class="product-detail__share" data-popup="#share-popup">
+                     <svg>
+                        <use xlink:href="img/icons/icons.svg#icon_share"></use>
+                     </svg>
+                     <span>Поделиться</span>
+                  </button>
+               </div>
+               <div class="product-detail__price-block">
+                  <div class="product-detail__price-title">Розничная цена</div>
+                  <div class="product-detail__price">8 900 ₽</div>
+               </div>
+               <div class="product-detail__size-block">
+                  <div class="product-detail__size-title">Размеры</div>
+                  <div class="product-detail__size-grid">
+                     <a href="" class="product-detail__size-item"><span>42</span><span>158-164</span></a>
+                     <a href="" class="product-detail__size-item"><span>44</span><span>158-164</span></a>
+                     <a href="" class="product-detail__size-item"><span>44</span><span>164-170</span></a>
+                  </div>
+                  <button type="button" data-popup="#size-table" class="product-detail__size-table-btn">таблица размеров</button>
+               </div>
+               <div class="product-detail__buttons">
+                  <button type="button" class="product-detail__link button button_color-black" data-popup="#callback">Купить оптом</button>
+                  <button type="button" data-popup="" class="product-detail__button button button_transparent-black">Купить в розницу</button>
+               </div>
+               <div data-spollers class="product-detail__spollers">
+                  <div class="product-detail__spoller">
+                     <button type="button" data-spoller class="product-detail__spoller-title">Описание</button>
+                     <div class="product-detail__spoller-content">
+                        <div class="product-detail__descr">
+                           <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Всеми букв приставка океана переулка путь речью что эта агентство моей снова, переписали решила которой запятой наш выйти повстречался текст.</p>
+                           <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Запятой гор назад над, до если единственное живет снова дал меня путь. Раз до на берегу даль необходимыми взгляд ведущими маленькая.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="product-detail__spoller">
+                     <button type="button" data-spoller class="product-detail__spoller-title">Характеристики</button>
+                     <div class="product-detail__spoller-content">
+                        <div class="product-detail__specifications">
+                           <div class="product-detail__spec-item">
+                              <div class="product-detail__spec-name">Код товара</div>
+                              <div class="product-detail__spec-value">2534534</div>
+                           </div>
+                           <div class="product-detail__spec-item">
+                              <div class="product-detail__spec-name">Пол</div>
+                              <div class="product-detail__spec-value">Женский</div>
+                           </div>
+                           <div class="product-detail__spec-item">
+                              <div class="product-detail__spec-name">Назначение</div>
+                              <div class="product-detail__spec-value">Рыбалка</div>
+                           </div>
+                           <div class="product-detail__spec-item">
+                              <div class="product-detail__spec-name">Сезон</div>
+                              <div class="product-detail__spec-value">Демисезон</div>
+                           </div>
+                           <div class="product-detail__spec-item">
+                              <div class="product-detail__spec-name">Цвет</div>
+                              <div class="product-detail__spec-value">Красный</div>
+                           </div>
+                           <div class="product-detail__spec-item">
+                              <div class="product-detail__spec-name">Размер</div>
+                              <div class="product-detail__spec-value">45-54</div>
+                           </div>
+                           <div class="product-detail__spec-item">
+                              <div class="product-detail__spec-name">Функциональные особенности:</div>
+                              <div class="product-detail__spec-value">Водонепронецаемая, самоочищающаяся</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="product-detail__gallery" data-gallery>
+            <a href="@img/gallery-1.png" class="product-detail__gallery-item-ibg"><img src="@img/gallery-1.png" alt=""></a>
+            <a href="@img/gallery-2.png" class="product-detail__gallery-item-ibg"><img src="@img/gallery-2.png" alt=""></a>
+            <a href="@img/gallery-3.png" class="product-detail__gallery-item-ibg"><img src="@img/gallery-3.png" alt=""></a>
+            <a href="@img/gallery-4.png" class="product-detail__gallery-item-ibg"><img src="@img/gallery-4.png" alt=""></a>
+            <a href="@img/gallery-5.png" class="product-detail__gallery-item-ibg"><img src="@img/gallery-5.png" alt=""></a>
+            <a href="@img/gallery-6.png" class="product-detail__gallery-item-ibg"><img src="@img/gallery-6.png" alt=""></a>
+         </div>
+      </div>
+      <div id="size-table" aria-hidden="true" class="popup size-table">
+         <div class="popup__wrapper">
+            <div class="popup__content">
+               <div class="popup__header">
+                  <div class="popup__title">Размеры</div>
+                  <button data-close type="button" class="popup__close">
+                     <svg class="popup__close-svg">
+                        <use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+                     </svg>
+                  </button>
+               </div>
+               <div class="popup__main">
+                  <div data-tabs class="size-tabs">
+                     <nav data-tabs-titles class="size-tabs__navigation">
+                        <button type="button" class="size-tabs__title _tab-active">Мужские</button>
+                        <button type="button" class="size-tabs__title">Женские</button>
+                        <button type="button" class="size-tabs__title">Детские</button>
+                     </nav>
+                     <div data-tabs-body class="size-tabs__content">
+                        <div class="size-tabs__body">
+                           <div class="size-tabs__descr">
+                              <p>Чтобы определить мужской размер, Вам необходимо измерить следующие параметры:</p>
+                              <br>
+                              <p>1. Обхват груди</p>
+                              <p>Измерять обхват груди необходимо сзади, касаясь углов подмышечных впадин, а также спереди, через выступающие точки.</p>
+                              <br>
+                              <p>2. Обхват талии</p>
+                              <p>Измерять обхват талии необходимо горизонтально вокруг туловища, по наиболее выступающим точкам ягодиц.</p>
+                           </div>
+                           <div class="size-tabs__center">
+                              <div class="size-tabs__image"><img src="@img/size-tabs-image-m.png" alt=""></div>
+                              <div class="size-tabs__table">
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Обозначение роста</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">1</div>
+                                       <div class="size-tabs__col-item">2</div>
+                                       <div class="size-tabs__col-item">3</div>
+                                       <div class="size-tabs__col-item">4</div>
+                                       <div class="size-tabs__col-item">5</div>
+                                       <div class="size-tabs__col-item">6</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Рост, см</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">146</div>
+                                       <div class="size-tabs__col-item">152</div>
+                                       <div class="size-tabs__col-item">170</div>
+                                       <div class="size-tabs__col-item">146</div>
+                                       <div class="size-tabs__col-item">152</div>
+                                       <div class="size-tabs__col-item">170</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="size-tabs__bottom">
+                              <div class="size-tabs__table">
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Российский размер</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">42</div>
+                                       <div class="size-tabs__col-item">44</div>
+                                       <div class="size-tabs__col-item">46</div>
+                                       <div class="size-tabs__col-item">42</div>
+                                       <div class="size-tabs__col-item">44</div>
+                                       <div class="size-tabs__col-item">46</div>
+                                       <div class="size-tabs__col-item">42</div>
+                                       <div class="size-tabs__col-item">44</div>
+                                       <div class="size-tabs__col-item">46</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Обхват груди, см</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">84</div>
+                                       <div class="size-tabs__col-item">88</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">84</div>
+                                       <div class="size-tabs__col-item">88</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">84</div>
+                                       <div class="size-tabs__col-item">88</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Обхват бёдер, см</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">96</div>
+                                       <div class="size-tabs__col-item">100</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">96</div>
+                                       <div class="size-tabs__col-item">100</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">96</div>
+                                       <div class="size-tabs__col-item">100</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Соответствие размера рубашек</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">34 XS</div>
+                                       <div class="size-tabs__col-item">35 S</div>
+                                       <div class="size-tabs__col-item">36 M</div>
+                                       <div class="size-tabs__col-item">34 XS</div>
+                                       <div class="size-tabs__col-item">35 S</div>
+                                       <div class="size-tabs__col-item">36 M</div>
+                                       <div class="size-tabs__col-item">34 XS</div>
+                                       <div class="size-tabs__col-item">35 S</div>
+                                       <div class="size-tabs__col-item">36 M</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Международный размер</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">XS</div>
+                                       <div class="size-tabs__col-item">S</div>
+                                       <div class="size-tabs__col-item">M</div>
+                                       <div class="size-tabs__col-item">XS</div>
+                                       <div class="size-tabs__col-item">S</div>
+                                       <div class="size-tabs__col-item">M</div>
+                                       <div class="size-tabs__col-item"></div>
+                                       <div class="size-tabs__col-item"></div>
+                                       <div class="size-tabs__col-item"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="size-tabs__body">
+                           <div class="size-tabs__descr">
+                              <p>Чтобы определить женский размер, Вам необходимо измерить следующие параметры:</p>
+                              <br>
+                              <p>1. Обхват груди</p>
+                              <p>Измерять обхват груди необходимо сзади, касаясь углов подмышечных впадин, а также спереди, через выступающие точки грудных желёз.</p>
+                              <br>
+                              <p>2. Обхват бёдер</p>
+                              <p>Измерять обхват бёдер необходимо горизонтально вокруг туловища, по наиболее выступающим точкам ягодиц.</p>
+                           </div>
+                           <div class="size-tabs__center">
+                              <div class="size-tabs__image"><img src="@img/size-tabs-image-w.png" alt=""></div>
+                              <div class="size-tabs__table">
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Обозначение роста</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">1</div>
+                                       <div class="size-tabs__col-item">2</div>
+                                       <div class="size-tabs__col-item">3</div>
+                                       <div class="size-tabs__col-item">4</div>
+                                       <div class="size-tabs__col-item">5</div>
+                                       <div class="size-tabs__col-item">6</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Рост, см</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">146</div>
+                                       <div class="size-tabs__col-item">152</div>
+                                       <div class="size-tabs__col-item">170</div>
+                                       <div class="size-tabs__col-item">146</div>
+                                       <div class="size-tabs__col-item">152</div>
+                                       <div class="size-tabs__col-item">170</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="size-tabs__bottom">
+                              <div class="size-tabs__table">
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Российский размер</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">42</div>
+                                       <div class="size-tabs__col-item">44</div>
+                                       <div class="size-tabs__col-item">46</div>
+                                       <div class="size-tabs__col-item">42</div>
+                                       <div class="size-tabs__col-item">44</div>
+                                       <div class="size-tabs__col-item">46</div>
+                                       <div class="size-tabs__col-item">42</div>
+                                       <div class="size-tabs__col-item">44</div>
+                                       <div class="size-tabs__col-item">46</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Обхват груди, см</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">84</div>
+                                       <div class="size-tabs__col-item">88</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">84</div>
+                                       <div class="size-tabs__col-item">88</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">84</div>
+                                       <div class="size-tabs__col-item">88</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Обхват бёдер, см</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">96</div>
+                                       <div class="size-tabs__col-item">100</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">96</div>
+                                       <div class="size-tabs__col-item">100</div>
+                                       <div class="size-tabs__col-item">92</div>
+                                       <div class="size-tabs__col-item">96</div>
+                                       <div class="size-tabs__col-item">100</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Соответствие размера рубашек</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">34 XS</div>
+                                       <div class="size-tabs__col-item">35 S</div>
+                                       <div class="size-tabs__col-item">36 M</div>
+                                       <div class="size-tabs__col-item">34 XS</div>
+                                       <div class="size-tabs__col-item">35 S</div>
+                                       <div class="size-tabs__col-item">36 M</div>
+                                       <div class="size-tabs__col-item">34 XS</div>
+                                       <div class="size-tabs__col-item">35 S</div>
+                                       <div class="size-tabs__col-item">36 M</div>
+                                    </div>
+                                 </div>
+                                 <div class="size-tabs__col">
+                                    <div class="size-tabs__col-name">Международный размер</div>
+                                    <div class="size-tabs__col-items">
+                                       <div class="size-tabs__col-item">XS</div>
+                                       <div class="size-tabs__col-item">S</div>
+                                       <div class="size-tabs__col-item">M</div>
+                                       <div class="size-tabs__col-item">XS</div>
+                                       <div class="size-tabs__col-item">S</div>
+                                       <div class="size-tabs__col-item">M</div>
+                                       <div class="size-tabs__col-item"></div>
+                                       <div class="size-tabs__col-item"></div>
+                                       <div class="size-tabs__col-item"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="size-tabs__body">
+                           Содержимое третьего таба
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   @@include('html/_products-slider.htm',{
+   "title":"Дополнительно в комплект"
+   })
+   @@include('html/_products-slider.htm',{
+   "title":"Ранее вы смотрели"
+   })
+</main>
+@@include('html/_footer.htm',{})

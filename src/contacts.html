@@ -1,0 +1,124 @@
+@@include('html/_header.htm',{
+"title":"Контакты",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__title">Контакты</div>
+   </div>
+   <div class="contacts">
+      <div class="contacts__container">
+         <div class="contacts__top">
+            <div class="contacts__item">
+               <img src="@img/icons/contact_point.svg" alt="">
+               <span>Красноярск, ул. Семафорная, 289</span>
+            </div>
+            <a href="tel:88005007552" class="contacts__item">
+               <img src="@img/icons/contact_phone.svg" alt="">
+               <span>8 800 500 75 52</span>
+            </a>
+            <a href="mailto:rosomaha@mail.ru" class="contacts__item">
+               <img src="@img/icons/contact_mail.svg" alt="">
+               <span>rosomaha@mail.ru</span>
+            </a>
+            <a href="" class="contacts__item">
+               <img src="@img/icons/contact_vk.svg" alt="">
+               <span>Группа Вконтакте</span>
+            </a>
+            <a href="" class="contacts__item">
+               <img src="@img/icons/contact_tg.svg" alt="">
+               <span>Написать в Телеграм</span>
+            </a>
+            <a href="" class="link-document">
+               <img src="@img/icons/icon_pres.svg" alt="">
+               <span class="link-document__name">Презентация о бренде</span>
+               <span class="link-document__size">PDF, 3.4 МB</span>
+            </a>
+         </div>
+      </div>
+      <div class="contacts__bottom">
+         <div id="map"></div>
+         <script>
+            @@include('js/files/map.js', {})
+         </script>
+         <div class="contacts__requisite">
+            <div class="contacts__title">Реквизиты компании</div>
+            <div class="contacts__requisite-main">
+               <div class="contacts__row">
+                  <div class="contacts__name">Наименование организации</div>
+                  <div class="contacts__value">Индивидуальный предприниматель Гек Татьяна Викторовна</div>
+               </div>
+               <div class="contacts__row">
+                  <div class="contacts__name">Юридический адрес</div>
+                  <div class="contacts__value">660003, г. Красноярск, ул. Кутузова, д.40, кв. 35</div>
+               </div>
+               <div class="contacts__row">
+                  <div class="contacts__name">Адрес для корреспонденции</div>
+                  <div class="contacts__value">660037, г. Красноярск, пр. Газеты Красноярский рабочий д. 43, Почтовое отделение №37, а/я 2683</div>
+               </div>
+               <div class="contacts__row">
+                  <div class="contacts__name">ОГРНИП</div>
+                  <div class="contacts__value">318246800084678</div>
+               </div>
+               <div class="contacts__row">
+                  <div class="contacts__name">ИНН</div>
+                  <div class="contacts__value">246105635970</div>
+               </div>
+
+            </div>
+            <a href="" class="link-document">
+               <img src="@img/icons/icon_req.svg" alt="">
+               <span class="link-document__name">Презентация о бренде</span>
+               <span class="link-document__size">PDF, 3.4 МB</span>
+            </a>
+         </div>
+      </div>
+   </div>
+   <div class="page-form">
+      <div class="page-form__container">
+         <div class="page-form__text-block">
+            <div class="page-form__title">Обратная связь</div>
+            <div class="page-form__text">Задайте нам вопрос, направьте нам претензию
+               или оставьте отзыв о работе сайта или магазина</div>
+         </div>
+         <div class="page-form__form">
+            <form action="" class="form" data-parsley-validate data-parsley-trigger="change">
+               <div class="form__line">
+                  <label for="" class="form__label">Ваше имя</label>
+                  <input required id="" type="text" name="" class="form__input">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Контактный телефон</label>
+                  <input required id="" type="tel" name="" class="form__input js_phone">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">E-mail</label>
+                  <input id="" type="email" name="" class="form__input">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Сообщение</label>
+                  <textarea id="" autocomplete="off" name="" class="form__input"></textarea>
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__footer">
+                  <button type="submit" class="form__button button button_color-white">Отправить</button>
+                  <div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку перс. данных</a></div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

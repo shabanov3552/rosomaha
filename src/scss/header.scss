@@ -23,7 +23,9 @@
 
 .header {
 	padding: rem(31) 0;
-	margin-bottom: rem(30);
+	background-color: #fff;
+	position: relative;
+	z-index: 5;
 
 	.main-page & {
 		position: absolute;
@@ -31,12 +33,18 @@
 		left: var(--left-sidebar);
 		right: 0;
 		margin-bottom: rem(0);
+		background: none;
 
 		@media (max-width:$lg) {
 			padding: 0;
 			position: static;
 			z-index: auto;
+			background: #363636;
 		}
+	}
+
+	.popup-show & {
+		z-index: 1;
 	}
 
 	@media (max-width:$lg) {

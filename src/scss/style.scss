@@ -103,12 +103,6 @@ body {
 	overflow: hidden;
 	padding-left: var(--left-sidebar);
 
-	.page {
-		background-color: #fff;
-		position: relative;
-		z-index: 5;
-	}
-
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
@@ -116,6 +110,11 @@ body {
 	// Прижимаем footer
 	>main {
 		flex: 1 1 auto;
+		min-height: 100vh;
+
+		@media (max-width:$lg) {
+			min-height: auto;
+		}
 	}
 
 	// Фикс для слайдеров
@@ -123,6 +122,48 @@ body {
 		min-width: 0;
 	}
 }
+
+.page {
+	background-color: #fff;
+	position: relative;
+	z-index: 4;
+	padding-top: rem(30);
+
+	.main-page & {
+		padding-top: 0;
+	}
+
+	// .page__row
+
+	&__row {
+		// margin-bottom: rem(62);
+		display: flex;
+		gap: 60px;
+		align-items: flex-end;
+
+		@media (max-width:$md2) {
+			display: block;
+		}
+	}
+
+	// .page__text
+
+	&__text {
+		line-height: 144%;
+		max-width: 420px;
+
+		@media (max-width:$md2) {
+			margin-bottom: rem(35);
+		}
+	}
+
+	// .page__link
+
+	&__link {
+		height: 50px;
+	}
+}
+
 
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
 
@@ -216,3 +257,8 @@ body {
 // Подключение стилей отдельных страниц
 @import "home";
 @import "catalog";
+@import "product-detail";
+@import "about";
+@import "blog";
+@import "experts";
+@import "contacts";

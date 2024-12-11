@@ -380,6 +380,102 @@ function initSliders() {
 			}
 		});
 	}
+
+	if (document.querySelector('.product-detail-slider__main')) { // Указываем скласс нужного слайдера
+		let thumbsProdSlider = new Swiper('.product-detail-slider__thumbs', {
+			grabCursor: true,
+			spaceBetween: 16,
+			slidesPerView: 'auto',
+			breakpoints: {
+				320: {
+					direction: "horizontal",
+					spaceBetween: 5,
+				},
+				767.98: {
+					direction: "vertical",
+					spaceBetween: 16,
+				},
+			},
+		})
+		// Создаем слайдер
+		let mainProdSLider = new Swiper('.product-detail-slider__main', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Thumbs, Navigation],
+			slidesPerView: 1,
+			spaceBetween: 10,
+			thumbs: {
+				swiper: thumbsProdSlider,
+			},
+			// speed: 800,
+			// observer: true,
+			// observeParents: true,
+			// autoHeight: true,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.product-detail-slider__nav .swiper-button-prev',
+				nextEl: '.product-detail-slider__nav .swiper-button-next',
+			},
+
+			// Брейкпоинты
+			/*
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			// События
+			// on: {
+
+			// }
+		});
+	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {

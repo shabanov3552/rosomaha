@@ -1,0 +1,49 @@
+@@include('html/_header.htm',{
+"title":"Результаты поиска",
+"modClass":"search-result"
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="main-catalog">
+         <div class="main-catalog__header">
+            <div class="main-catalog__title">Результаты поиска по запросу «куртка»</div>
+
+            <select>
+               <option value="1" selected>Показывать по 15</option>
+               <option value="2">Показывать по 30</option>
+               <option value="3">Показывать по 60</option>
+            </select>
+         </div>
+         <div class="main-catalog__content">
+            <div class="main-catalog__cards">
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card__image-1.png",
+               "name":"Ветровка для осеннего отдыха"
+               })
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card__image-2.png",
+               "name":"Ветровка для хайкинга"
+               })
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card__image-3.png",
+               "name":"Куртка спортивная утепленная"
+               })
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card__image-4.png",
+               "name":"Костюм флисовый"
+               })
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card__image-5.png",
+               "name":"Ветровка для осеннего отдыха"
+               })
+            </div>
+            <button type="button" class="main-catalog__more-btn button button_transparent-black">Показать ещё</button>
+            <div class="main-catalog__pagging">
+               @@include('html/_pagging.htm',{})
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

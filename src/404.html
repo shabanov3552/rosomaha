@@ -1,0 +1,18 @@
+@@include('html/_header.htm',{
+"title":"Страница не найдена",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__title">Ошибка 404: страница не найдена</div>
+      <div class="page__row">
+         <div class="page__text">Неправильно набран адрес <br> или такой страницы не существует</div>
+         <a href="" class="page__link button button_transparent-black">Вернуться на главную</a>
+      </div>
+   </div>
+   @@include('html/_products-slider.htm',{
+   "title":"Новинки"
+   })
+</main>
+@@include('html/_footer.htm',{})

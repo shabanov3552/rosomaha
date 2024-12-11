@@ -51,7 +51,8 @@
    // .main-catalog__header
 
    &__header {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: rem(34);
@@ -249,8 +250,27 @@
       gap: 46px 4px;
       margin-bottom: rem(57);
 
+      .search-result & {
+         grid-template-columns: repeat(4, 1fr);
+
+         @media (min-width:$xl) {
+            gap: 46px 20px;
+         }
+
+      }
+
       @media (max-width:$xl) {
          grid-template-columns: repeat(2, 1fr);
+
+         .search-result & {
+            grid-template-columns: repeat(3, 1fr);
+         }
+      }
+
+      @media (max-width:$lg) {
+         .search-result & {
+            grid-template-columns: repeat(2, 1fr);
+         }
       }
 
       @media (max-width:$xs) {

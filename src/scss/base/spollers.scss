@@ -10,6 +10,10 @@
 // Спойлер
 .spollers__item {
 	font-size: rem(20);
+
+	&:not(:first-child) {
+		border-top: 1px solid #000;
+	}
 }
 
 // Заголовок спойлера

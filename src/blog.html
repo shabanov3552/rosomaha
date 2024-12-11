@@ -1,0 +1,65 @@
+@@include('html/_header.htm',{
+"title":"Блог",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__title">Блог</div>
+   </div>
+   <div class="categories-block">
+      <div class="categories-block__container">
+         <div class="categories-block__grid">
+            <a href="" class="categories-block__link _active">Все</a>
+            <a href="" class="categories-block__link">Образовательные учреждения</a>
+            <a href="" class="categories-block__link">Общественные здания</a>
+            <a href="" class="categories-block__link">Оздоровительные учреждения</a>
+            <a href="" class="categories-block__link">Жилые дома</a>
+            <a href="" class="categories-block__link">Спортивные сооружения</a>
+            <a href="" class="categories-block__link">Коммунальная инфраструктура</a>
+            <a href="" class="categories-block__link">Генеральные планы и проекты планировок</a>
+         </div>
+      </div>
+   </div>
+   <div class="blog">
+      <div class="blog__container">
+         <div class="blog__grid">
+            <div class="blog__item blog__item_first">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Истории успеха: Как спортивная и туристическая одежда помогает людям достигать целей</a>
+               <div class="blog__descr">Интервью с клиентами или спортсменами, которые делятся своими историями о том, как ваша продукция помогла им в достижении целей</div>
+               <div class="blog__image-ibg"><img src="@img/blog-1.png" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Технологии тканей: Как выбрать правильную одежду для активного отдыха</a>
+               <div class="blog__descr">Обзор различных типов тканей, их свойств и преимуществ для спорта и туризма</div>
+               <div class="blog__image-ibg"><img src="@img/blog-2.png" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Как ухаживать за спортивной одеждой: Советы по стирке и хранению</a>
+               <div class="blog__descr">Полезные советы по уходу за одеждой, чтобы она служила долго и сохраняла свои свойства</div>
+               <div class="blog__image-ibg"><img src="@img/blog-3.png" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Спортивная одежда для разных сезонов: Что носить весной, летом, осенью и зимой</a>
+               <div class="blog__descr">Подборка одежды в зависимости от времени года и погодных условий</div>
+               <div class="blog__image-ibg"><img src="@img/blog-4.png" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Этика производства: Почему важно выбирать экологичную спортивную одежду</a>
+               <div class="blog__descr">Рассказ о том, как ваша компания заботится об экологии и почему это важно для потребителей</div>
+               <div class="blog__image-ibg"><img src="@img/blog-5.png" alt=""></div>
+            </div>
+         </div>
+         <div class="blog__bottom">
+            <a href="" class="blog__more-btn button button_transparent-black">Показать еще</a>
+            @@include('html/_pagging.htm',{})
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

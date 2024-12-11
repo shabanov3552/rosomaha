@@ -1,20 +1,3 @@
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<div class="popup__header">
-				<div class="popup__title">Заголовок</div>
-				<button data-close type="button" class="popup__close">
-					<svg class="popup__close-svg">
-						<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-					</svg>
-				</button>
-			</div>
-			<div class="popup__main">
-
-			</div>
-		</div>
-	</div>
-</div>
 <div class="popup-box">
 	<div id="video" aria-hidden="true" class="popup video-popup">
 		<div class="popup__wrapper">
@@ -71,7 +54,7 @@
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<div class="popup__header">
-					<div class="popup__title">Спасибо</div>
+					<div class="popup__title">Спасибо за обращение</div>
 					<button data-close type="button" class="popup__close">
 						<svg class="popup__close-svg">
 							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
@@ -79,13 +62,10 @@
 					</button>
 				</div>
 				<div class="popup__main">
-					<div class="popup__text">Мы свяжемся с вами в ближайшее время для уточнения информации</div>
-					<button data-close type="button" class="popup__close">
-						Ok
+					<div class="popup__text">Наш менеджер скоро свяжется с вами</div>
+					<button data-close type="button" class="popup__close-button button button_color-white">
+						Хорошо
 					</button>
-					<div class="popup__icon">
-						<img src="@img/icons/popup__icon.svg" alt="">
-					</div>
 				</div>
 			</div>
 		</div>
@@ -96,7 +76,7 @@
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<div class="popup__header">
-					<div class="popup__title">Заказ звонка</div>
+					<div class="popup__title">Купить оптом</div>
 					<button data-close type="button" class="popup__close">
 						<svg class="">
 							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
@@ -104,33 +84,47 @@
 					</button>
 				</div>
 				<div class="popup__main">
-					<div class="popup__text">Оставьте контактные данные и мы вам перезвоним</div>
+					<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
 					<div class="popup__form">
-						<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
+						<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
 							<div class="form__line">
-								<label for="p-callback-2.1" class="form__label">Ваше имя</label>
-								<input id="p-callback-2.1" type="text" class="form__input">
+								<label for="" class="form__label">Ваше имя *</label>
+								<input id="" type="text" class="form__input" required>
 								<svg class="form__clear-svg">
 									<use xlink:href="img/icons/icons.svg#input_clear"></use>
 								</svg>
 							</div>
 							<div class="form__line">
-								<label for="p-callback-2.2" class="form__label">Телефон *</label>
-								<input required id="p-callback-2.2" type="tel" class="form__input js_phone">
+								<label for="" class="form__label">Контактный телефон *</label>
+								<input id="" type="tel" class="form__input js_phone" required>
 								<svg class="form__clear-svg">
 									<use xlink:href="img/icons/icons.svg#input_clear"></use>
 								</svg>
 							</div>
 							<div class="form__line">
-								<label for="p-callback-2.3" class="form__label">Комментарий</label>
-								<textarea id="p-callback-2.3" autocomplete="off" name="" placeholder="" class="form__input"></textarea>
+								<label for="" class="form__label">E-mail</label>
+								<input id="" type="email" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">ИНН</label>
+								<input id="" type="text" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Комментарий</label>
+								<textarea id="" autocomplete="off" name="" placeholder="" class="form__input"></textarea>
 								<svg class="form__clear-svg">
 									<use xlink:href="img/icons/icons.svg#input_clear"></use>
 								</svg>
 							</div>
 							<div class="form__footer">
-								<button type="submit" class="form__button btn btn_red">Отправить</button>
-								<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку перс. данных</a></div>
+								<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
+								<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
 							</div>
 						</form>
 					</div>
@@ -139,4 +133,121 @@
 		</div>
 	</div>
 	<!-- Заказать звонок -->
+	<!-- Стать амбассодором -->
+	<div id="invite" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Стать амбассодором</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
+					<div class="popup__form">
+						<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
+							<div class="form__line">
+								<label for="" class="form__label">Ваше имя *</label>
+								<input id="" type="text" class="form__input" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Ссылка на соц.сети</label>
+								<input id="" type="text" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Номер телефона *</label>
+								<input id="" type="tel" class="form__input js_phone" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">E-mail</label>
+								<input id="" type="email" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__footer">
+								<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
+								<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Стать амбассодором -->
+	<!-- Получить коммерческое предложение -->
+	<div id="get-offer" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Получить коммерческое предложение</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
+					<div class="popup__form">
+						<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
+							<div class="form__line">
+								<label for="" class="form__label">Ваше имя *</label>
+								<input id="" type="text" class="form__input" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Контактный телефон *</label>
+								<input id="" type="tel" class="form__input js_phone" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">E-mail</label>
+								<input id="" type="email" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">ИНН</label>
+								<input id="" type="text" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Комментарий</label>
+								<textarea id="" autocomplete="off" name="" placeholder="" class="form__input"></textarea>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__footer">
+								<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
+								<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Получить коммерческое предложение -->
 </div>

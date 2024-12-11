@@ -17,7 +17,7 @@ if (document.querySelector('#map')) {
 				zoom: 16,
 				controls: ['zoomControl'],
 			});
-			let addresFirst = new ymaps.Placemark([56.066525, 92.961439], {}, {
+			let addresFirst = new ymaps.Placemark([55.994859068755574, 92.93178109259024], {}, {
 				iconLayout: 'default#imageWithContent',
 				iconImageHref: '@img/icons/map-marker.svg',
 				iconImageSize: [92, 57],

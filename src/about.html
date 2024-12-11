@@ -1,0 +1,85 @@
+@@include('html/_header.htm',{
+"title":"О бренде",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__title">О бренде</div>
+   </div>
+   <div class="about">
+      <div class="about__container">
+         <div class="about__top-line">
+            <div class="about__title">История бренда</div>
+            <a href="#fabric" class="about__link-goto">
+               <span>Производство</span>
+               <img src="@img/icons/arrow_down.svg" alt="">
+            </a>
+         </div>
+         <div class="about__descr">
+            <div class="about__descr-content">
+               <div class="about__text">
+                  <p>Сибирский бренд "Росомаха" появился на рынке в ответ на растущий интерес к активному отдыху и приключениям на свежем воздухе среди населения России. Основанный группой энтузиастов, которые сами испытывали недостаток качественной и надежной одежды для спорта и туризма, бренд задумывался как решение этой проблемы. </p>
+               </div>
+               <a href="" class="link-document">
+                  <img src="@img/icons/icon_pres.svg" alt="">
+                  <span class="link-document__name">Презентация о бренде</span>
+                  <span class="link-document__size">PDF, 3.4 МB</span>
+               </a>
+            </div>
+            <div class="about__image-ibg"><img src="@img/about-1.png" alt=""></div>
+         </div>
+         <div class="about__descr">
+            <div class="about__descr-content">
+               <div class="about__text">
+                  <p>С первых дней своего существования "Росомаха" стремилась к инновациям и высокому качеству продукции. Вдохновленные природой и культурой родного края, дизайнеры начали разрабатывать коллекции, которые сочетали бы в себе стильный дизайн и функциональность. </p>
+                  <p>Сегодня "Росомаха" представляет собой не только производителя одежды, но и символ стремления к активной жизни и исследованию удивительного мира вокруг нас.</p>
+               </div>
+            </div>
+            <div class="about__image-ibg"><img src="@img/about-2.png" alt=""></div>
+         </div>
+      </div>
+   </div>
+   <div class="about-video">
+      <div class="about-video__wrapper" data-popup="#video" data-popup-youtube="JNZX-oBJVEs">
+         <div class="about-video__image-ibg"><img src="@img/about-video.png" alt=""></div>
+         <div class="about-video__logo"><img src="@img/logo_header.svg" alt=""></div>
+         <div class="about-video__title">Видео о нас</div>
+         <div class="about-video__col">
+            <div class="about-video__text">История</div>
+            <div class="about-video__text">Производство</div>
+            <div class="about-video__text">Контроль качества</div>
+         </div>
+      </div>
+   </div>
+   <div id="fabric" class="fabric">
+      <div class="fabric__container">
+         <div class="fabric__title">Производство</div>
+         <div class="fabric__block">
+            <div class="fabric__block-number">1</div>
+            <div class="fabric__image-ibg"><img src="@img/fabric-1.png" alt=""></div>
+            <div class="fabric__content">
+               <div class="fabric__content-title">Выбор материалов</div>
+               <div class="fabric__text">После утверждения дизайна начинается выбор материалов, которые будут использоваться в производстве. Это включает в себя анализ различных тканей с точки зрения их прочности, водоотталкивающих свойств и термоизоляции. Важно, чтобы выбранные материалы соответствовали высоким стандартам качества и экологическим требованиям.</div>
+            </div>
+         </div>
+         <div class="fabric__block">
+            <div class="fabric__block-number">2</div>
+            <div class="fabric__image-ibg"><img src="@img/fabric-2.png" alt=""></div>
+            <div class="fabric__content">
+               <div class="fabric__content-title">Прототипирование</div>
+               <div class="fabric__text">На этапе прототипирования создаются образцы одежды, которые позволяют оценить, как дизайн будет выглядеть и работать на практике. Этот этап включает в себя проверку посадки, функциональности и удобства, а также внесение необходимых корректировок в конструкцию и дизайн, чтобы улучшить конечный продукт.</div>
+            </div>
+         </div>
+         <div class="fabric__block">
+            <div class="fabric__block-number">3</div>
+            <div class="fabric__image-ibg"><img src="@img/fabric-3.png" alt=""></div>
+            <div class="fabric__content">
+               <div class="fabric__content-title">Производство</div>
+               <div class="fabric__text">После успешного тестирования прототипов наступает этап массового производства. Контроль качества становится ключевым моментом, чтобы гарантировать, что каждая единица продукции соответствует установленным стандартам. Этап производства также может включать в себя автоматизацию некоторых процессов для увеличения скорости и эффективности.</div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})
