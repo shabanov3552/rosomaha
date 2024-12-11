@@ -2300,9 +2300,9 @@ body::after {
   position: absolute;
   inset: 0;
   width: calc(100% + var(--left-sidebar));
-  -webkit-transform: translateX(calc(0 - var(--left-sidebar)));
-  -ms-transform: translateX(calc(0 - var(--left-sidebar)));
-  transform: translateX(calc(0 - var(--left-sidebar)));
+  -webkit-transform: translateX(calc(.000001% - var(--left-sidebar)));
+  -ms-transform: translateX(calc(.000001% - var(--left-sidebar)));
+  transform: translateX(calc(.000001% - var(--left-sidebar)));
   z-index: 1
 }
 .footer a:hover {

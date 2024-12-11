@@ -13,7 +13,7 @@ if (document.querySelector('#map')) {
 
 		function init() {
 			var myMap = new ymaps.Map("map", {
-				center: [56.066525, 92.961439],
+				center: [55.994859068755574, 92.93178109259024],
 				zoom: 16,
 				controls: ['zoomControl'],
 			});
