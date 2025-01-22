@@ -1,5 +1,298 @@
 (() => {
     var __webpack_modules__ = {
+        402: function(module, exports) {
+            "use strict";
+            var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+            !function(t, e) {
+                if (true && "object" == typeof module.exports) {
+                    if (!t.document) throw new Error("HC-Sticky requires a browser to run.");
+                    module.exports = e(t);
+                } else true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = e(t), 
+                __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
+                __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : 0;
+            }("undefined" != typeof window ? window : this, (function(V) {
+                var i, n, Q = V.document, U = {
+                    top: 0,
+                    bottom: 0,
+                    bottomEnd: 0,
+                    innerTop: 0,
+                    innerSticker: null,
+                    stickyClass: "sticky",
+                    stickTo: null,
+                    followScroll: !0,
+                    responsive: null,
+                    mobileFirst: !1,
+                    onStart: null,
+                    onStop: null,
+                    onBeforeResize: null,
+                    onResize: null,
+                    resizeDebounce: 100,
+                    disable: !1
+                }, Y = function(t, e, o) {
+                    console.warn("%cHC Sticky:%c " + o + "%c '" + t + "'%c is now deprecated and will be removed. Use%c '" + e + "'%c instead.", "color: #fa253b", "color: default", "color: #5595c6", "color: default", "color: #5595c6", "color: default");
+                }, $ = function(n, f) {
+                    var o = this;
+                    if (f = f || {}, !(n = "string" == typeof n ? Q.querySelector(n) : n)) return !1;
+                    f.queries && Y("queries", "responsive", "option"), f.queryFlow && Y("queryFlow", "mobileFirst", "option");
+                    var p = {}, u = $.Helpers, s = n.parentNode;
+                    "static" === u.getStyle(s, "position") && (s.style.position = "relative");
+                    function d(t) {
+                        u.isEmptyObject(t = t || {}) && !u.isEmptyObject(p) || (p = Object.assign({}, U, p, t));
+                    }
+                    function t() {
+                        return p.disable;
+                    }
+                    function e() {
+                        var t, e = p.responsive || p.queries;
+                        if (e) {
+                            var o = V.innerWidth;
+                            if (t = f, (p = Object.assign({}, U, t || {})).mobileFirst) for (var i in e) i <= o && !u.isEmptyObject(e[i]) && d(e[i]); else {
+                                var n, s = [];
+                                for (n in e) {
+                                    var r = {};
+                                    r[n] = e[n], s.push(r);
+                                }
+                                for (var l = s.length - 1; 0 <= l; l--) {
+                                    var a = s[l], c = Object.keys(a)[0];
+                                    o <= c && !u.isEmptyObject(a[c]) && d(a[c]);
+                                }
+                            }
+                        }
+                    }
+                    function i() {
+                        var t, e, o, i;
+                        I.css = (t = n, e = u.getCascadedStyle(t), o = u.getStyle(t), i = {
+                            height: t.offsetHeight + "px",
+                            left: e.left,
+                            right: e.right,
+                            top: e.top,
+                            bottom: e.bottom,
+                            position: o.position,
+                            display: o.display,
+                            verticalAlign: o.verticalAlign,
+                            boxSizing: o.boxSizing,
+                            marginLeft: e.marginLeft,
+                            marginRight: e.marginRight,
+                            marginTop: e.marginTop,
+                            marginBottom: e.marginBottom,
+                            paddingLeft: e.paddingLeft,
+                            paddingRight: e.paddingRight
+                        }, e.float && (i.float = e.float || "none"), e.cssFloat && (i.cssFloat = e.cssFloat || "none"), 
+                        o.MozBoxSizing && (i.MozBoxSizing = o.MozBoxSizing), i.width = "auto" !== e.width ? e.width : "border-box" === i.boxSizing || "border-box" === i.MozBoxSizing ? t.offsetWidth + "px" : o.width, 
+                        i), P.init(), y = !(!p.stickTo || !("document" === p.stickTo || p.stickTo.nodeType && 9 === p.stickTo.nodeType || "object" == typeof p.stickTo && p.stickTo instanceof ("undefined" != typeof HTMLDocument ? HTMLDocument : Document))), 
+                        h = p.stickTo ? y ? Q : u.getElement(p.stickTo) : s, z = (R = function() {
+                            var t = n.offsetHeight + (parseInt(I.css.marginTop) || 0) + (parseInt(I.css.marginBottom) || 0), e = (z || 0) - t;
+                            return -1 <= e && e <= 1 ? z : t;
+                        })(), v = (H = function() {
+                            return y ? Math.max(Q.documentElement.clientHeight, Q.body.scrollHeight, Q.documentElement.scrollHeight, Q.body.offsetHeight, Q.documentElement.offsetHeight) : h.offsetHeight;
+                        })(), S = y ? 0 : u.offset(h).top, w = p.stickTo ? y ? 0 : u.offset(s).top : S, 
+                        E = V.innerHeight, N = n.offsetTop - (parseInt(I.css.marginTop) || 0), b = u.getElement(p.innerSticker), 
+                        L = isNaN(p.top) && -1 < p.top.indexOf("%") ? parseFloat(p.top) / 100 * E : p.top, 
+                        k = isNaN(p.bottom) && -1 < p.bottom.indexOf("%") ? parseFloat(p.bottom) / 100 * E : p.bottom, 
+                        x = b ? b.offsetTop : p.innerTop || 0, T = isNaN(p.bottomEnd) && -1 < p.bottomEnd.indexOf("%") ? parseFloat(p.bottomEnd) / 100 * E : p.bottomEnd, 
+                        j = S - L + x + N;
+                    }
+                    function r() {
+                        z = R(), v = H(), O = S + v - L - T, C = E < z;
+                        var t, e = V.pageYOffset || Q.documentElement.scrollTop, o = u.offset(n).top, i = o - e;
+                        B = e < F ? "up" : "down", A = e - F, j < (F = e) ? O + L + (C ? k : 0) - (p.followScroll && C ? 0 : L) <= e + z - x - (E - (j - x) < z - x && p.followScroll && 0 < (t = z - E - x) ? t : 0) ? I.release({
+                            position: "absolute",
+                            bottom: w + s.offsetHeight - O - L
+                        }) : C && p.followScroll ? "down" == B ? i + z + k <= E + .9 ? I.stick({
+                            bottom: k
+                        }) : "fixed" === I.position && I.release({
+                            position: "absolute",
+                            top: o - L - j - A + x
+                        }) : Math.ceil(i + x) < 0 && "fixed" === I.position ? I.release({
+                            position: "absolute",
+                            top: o - L - j + x - A
+                        }) : e + L - x <= o && I.stick({
+                            top: L - x
+                        }) : I.stick({
+                            top: L - x
+                        }) : I.release({
+                            stop: !0
+                        });
+                    }
+                    function l() {
+                        M && (V.removeEventListener("scroll", r, u.supportsPassive), M = !1);
+                    }
+                    function a() {
+                        null !== n.offsetParent && "none" !== u.getStyle(n, "display") ? (i(), v < z ? l() : (r(), 
+                        M || (V.addEventListener("scroll", r, u.supportsPassive), M = !0))) : l();
+                    }
+                    function c() {
+                        n.style.position = "", n.style.left = "", n.style.top = "", n.style.bottom = "", 
+                        n.style.width = "", n.classList ? n.classList.remove(p.stickyClass) : n.className = n.className.replace(new RegExp("(^|\\b)" + p.stickyClass.split(" ").join("|") + "(\\b|$)", "gi"), " "), 
+                        I.css = {}, !(I.position = null) === P.isAttached && P.detach();
+                    }
+                    function g() {
+                        c(), e(), (t() ? l : a)();
+                    }
+                    function m() {
+                        q && (V.removeEventListener("resize", W, u.supportsPassive), q = !1), l();
+                    }
+                    var y, h, b, v, S, w, E, L, k, x, T, j, O, C, z, N, H, R, A, B, I = {
+                        css: {},
+                        position: null,
+                        stick: function(t) {
+                            t = t || {}, u.hasClass(n, p.stickyClass) || (!1 === P.isAttached && P.attach(), 
+                            I.position = "fixed", n.style.position = "fixed", n.style.left = P.offsetLeft + "px", 
+                            n.style.width = P.width, void 0 === t.bottom ? n.style.bottom = "auto" : n.style.bottom = t.bottom + "px", 
+                            void 0 === t.top ? n.style.top = "auto" : n.style.top = t.top + "px", n.classList ? n.classList.add(p.stickyClass) : n.className += " " + p.stickyClass, 
+                            p.onStart && p.onStart.call(n, Object.assign({}, p)));
+                        },
+                        release: function(t) {
+                            var e;
+                            (t = t || {}).stop = t.stop || !1, !0 !== t.stop && "fixed" !== I.position && null !== I.position && (void 0 === t.top && void 0 === t.bottom || void 0 !== t.top && (parseInt(u.getStyle(n, "top")) || 0) === t.top || void 0 !== t.bottom && (parseInt(u.getStyle(n, "bottom")) || 0) === t.bottom) || (!0 === t.stop ? !0 === P.isAttached && P.detach() : !1 === P.isAttached && P.attach(), 
+                            e = t.position || I.css.position, I.position = e, n.style.position = e, n.style.left = !0 === t.stop ? I.css.left : P.positionLeft + "px", 
+                            n.style.width = ("absolute" !== e ? I.css : P).width, void 0 === t.bottom ? n.style.bottom = !0 === t.stop ? "" : "auto" : n.style.bottom = t.bottom + "px", 
+                            void 0 === t.top ? n.style.top = !0 === t.stop ? "" : "auto" : n.style.top = t.top + "px", 
+                            n.classList ? n.classList.remove(p.stickyClass) : n.className = n.className.replace(new RegExp("(^|\\b)" + p.stickyClass.split(" ").join("|") + "(\\b|$)", "gi"), " "), 
+                            p.onStop && p.onStop.call(n, Object.assign({}, p)));
+                        }
+                    }, P = {
+                        el: Q.createElement("div"),
+                        offsetLeft: null,
+                        positionLeft: null,
+                        width: null,
+                        isAttached: !1,
+                        init: function() {
+                            for (var t in P.el.className = "sticky-spacer", I.css) P.el.style[t] = I.css[t];
+                            P.el.style["z-index"] = "-1";
+                            var e = u.getStyle(n);
+                            P.offsetLeft = u.offset(n).left - (parseInt(e.marginLeft) || 0), P.positionLeft = u.position(n).left, 
+                            P.width = u.getStyle(n, "width");
+                        },
+                        attach: function() {
+                            s.insertBefore(P.el, n), P.isAttached = !0;
+                        },
+                        detach: function() {
+                            P.el = s.removeChild(P.el), P.isAttached = !1;
+                        }
+                    }, F = V.pageYOffset || Q.documentElement.scrollTop, M = !1, q = !1, D = function() {
+                        p.onBeforeResize && p.onBeforeResize.call(n, Object.assign({}, p)), g(), p.onResize && p.onResize.call(n, Object.assign({}, p));
+                    }, W = p.resizeDebounce ? u.debounce(D, p.resizeDebounce) : D;
+                    D = function() {
+                        q || (V.addEventListener("resize", W, u.supportsPassive), q = !0), e(), (t() ? l : a)();
+                    };
+                    this.options = function(t) {
+                        return t ? p[t] : Object.assign({}, p);
+                    }, this.refresh = g, this.update = function(t) {
+                        d(t), f = Object.assign({}, f, t || {}), g();
+                    }, this.attach = D, this.detach = m, this.destroy = function() {
+                        m(), c();
+                    }, this.triggerMethod = function(t, e) {
+                        "function" == typeof o[t] && o[t](e);
+                    }, this.reinit = function() {
+                        Y("reinit", "refresh", "method"), g();
+                    }, d(f), D(), V.addEventListener("load", g);
+                };
+                return void 0 !== V.jQuery && (i = V.jQuery, n = "hcSticky", i.fn.extend({
+                    hcSticky: function(e, o) {
+                        return this.length ? "options" === e ? i.data(this.get(0), n).options() : this.each((function() {
+                            var t = i.data(this, n);
+                            t ? t.triggerMethod(e, o) : (t = new $(this, e), i.data(this, n, t));
+                        })) : this;
+                    }
+                })), V.hcSticky = V.hcSticky || $, $;
+            })), function(a) {
+                var t = a.hcSticky, c = a.document;
+                "function" != typeof Object.assign && Object.defineProperty(Object, "assign", {
+                    value: function(t, e) {
+                        if (null == t) throw new TypeError("Cannot convert undefined or null to object");
+                        for (var o = Object(t), i = 1; i < arguments.length; i++) {
+                            var n = arguments[i];
+                            if (null != n) for (var s in n) Object.prototype.hasOwnProperty.call(n, s) && (o[s] = n[s]);
+                        }
+                        return o;
+                    },
+                    writable: !0,
+                    configurable: !0
+                }), Array.prototype.forEach || (Array.prototype.forEach = function(t) {
+                    var e, o;
+                    if (null == this) throw new TypeError("this is null or not defined");
+                    var i, n = Object(this), s = n.length >>> 0;
+                    if ("function" != typeof t) throw new TypeError(t + " is not a function");
+                    for (1 < arguments.length && (e = arguments[1]), o = 0; o < s; ) o in n && (i = n[o], 
+                    t.call(e, i, o, n)), o++;
+                });
+                var e = !1;
+                try {
+                    var o = Object.defineProperty({}, "passive", {
+                        get: function() {
+                            e = {
+                                passive: !1
+                            };
+                        }
+                    });
+                    a.addEventListener("testPassive", null, o), a.removeEventListener("testPassive", null, o);
+                } catch (t) {}
+                function n(t, e) {
+                    return a.getComputedStyle ? e ? c.defaultView.getComputedStyle(t, null).getPropertyValue(e) : c.defaultView.getComputedStyle(t, null) : t.currentStyle ? e ? t.currentStyle[e.replace(/-\w/g, (function(t) {
+                        return t.toUpperCase().replace("-", "");
+                    }))] : t.currentStyle : void 0;
+                }
+                function s(t) {
+                    var e = t.getBoundingClientRect(), o = a.pageYOffset || c.documentElement.scrollTop;
+                    t = a.pageXOffset || c.documentElement.scrollLeft;
+                    return {
+                        top: e.top + o,
+                        left: e.left + t
+                    };
+                }
+                t.Helpers = {
+                    supportsPassive: e,
+                    isEmptyObject: function(t) {
+                        for (var e in t) return !1;
+                        return !0;
+                    },
+                    debounce: function(i, n, s) {
+                        var r;
+                        return function() {
+                            var t = this, e = arguments, o = s && !r;
+                            clearTimeout(r), r = setTimeout((function() {
+                                r = null, s || i.apply(t, e);
+                            }), n), o && i.apply(t, e);
+                        };
+                    },
+                    hasClass: function(t, e) {
+                        return t.classList ? t.classList.contains(e) : new RegExp("(^| )" + e + "( |$)", "gi").test(t.className);
+                    },
+                    offset: s,
+                    position: function(t) {
+                        var e = t.offsetParent, o = s(e), i = s(t);
+                        e = n(e), t = n(t);
+                        return o.top += parseInt(e.borderTopWidth) || 0, o.left += parseInt(e.borderLeftWidth) || 0, 
+                        {
+                            top: i.top - o.top - (parseInt(t.marginTop) || 0),
+                            left: i.left - o.left - (parseInt(t.marginLeft) || 0)
+                        };
+                    },
+                    getElement: function(t) {
+                        var e = null;
+                        return "string" == typeof t ? e = c.querySelector(t) : a.jQuery && t instanceof a.jQuery && t.length ? e = t[0] : t instanceof Element && (e = t), 
+                        e;
+                    },
+                    getStyle: n,
+                    getCascadedStyle: function(t) {
+                        var e, o = t.cloneNode(!0);
+                        o.style.display = "none", Array.prototype.slice.call(o.querySelectorAll('input[type="radio"]')).forEach((function(t) {
+                            t.removeAttribute("name");
+                        })), t.parentNode.insertBefore(o, t.nextSibling), o.currentStyle ? e = o.currentStyle : a.getComputedStyle && (e = c.defaultView.getComputedStyle(o, null));
+                        var i, n, s, r = {};
+                        for (i in e) !isNaN(i) || "string" != typeof e[i] && "number" != typeof e[i] || (r[i] = e[i]);
+                        if (Object.keys(r).length < 3) for (var l in r = {}, e) isNaN(l) || (r[e[l].replace(/-\w/g, (function(t) {
+                            return t.toUpperCase().replace("-", "");
+                        }))] = e.getPropertyValue(e[l]));
+                        return r.margin || "auto" !== r.marginLeft ? r.margin || r.marginLeft !== r.marginRight || r.marginLeft !== r.marginTop || r.marginLeft !== r.marginBottom || (r.margin = r.marginLeft) : r.margin = "auto", 
+                        r.margin || "0px" !== r.marginLeft || "0px" !== r.marginRight || (s = (n = t.offsetLeft - t.parentNode.offsetLeft) - (parseInt(r.left) || 0) - (parseInt(r.right) || 0), 
+                        0 != (s = t.parentNode.offsetWidth - t.offsetWidth - n - (parseInt(r.right) || 0) + (parseInt(r.left) || 0) - s) && 1 != s || (r.margin = "auto")), 
+                        o.parentNode.removeChild(o), o = null, r;
+                    }
+                };
+            }(window);
+        },
         958: function(module) {
             /*!
  * dist/inputmask.min
@@ -3776,6 +4069,7 @@
     (() => {
         "use strict";
         const modules_flsModules = {};
+        var hc_sticky = __webpack_require__(402);
         document.addEventListener("click", (function(e) {
             if (bodyLockStatus && e.target.closest(".js-open-mobile-catalog")) {
                 bodyLockToggle();
@@ -4069,139 +4363,131 @@
                 e.preventDefault();
             }
         }
-        class CatalogSidebar {
-            constructor(options, manager) {
-                const {animatedBackground, leftSidebar, catalogSidebar, catalogToggleButton, htmlClass, animationDuration} = options;
-                this.animatedBackground = document.querySelector(animatedBackground);
-                this.leftSidebar = document.querySelector(leftSidebar);
-                this.catalogSidebar = document.querySelector(catalogSidebar);
-                this.catalogToggleButton = document.querySelector(catalogToggleButton);
+        class SidebarManager {
+            constructor() {
+                this.sidebarInstances = [];
+                this.htmlDocument = document.documentElement;
+                this.backgroundElement = document.querySelector(".animated-bg-ibg");
+                this.leftSidebarElement = document.querySelector(".left-sidebar");
+                if (!this.backgroundElement) throw new Error('Не удалось найти элемент с классом ".animated-bg-ibg".');
+                if (!this.leftSidebarElement) throw new Error('Не удалось найти элемент с классом ".left-sidebar".');
+                this.addGlobalEventListeners();
+            }
+            register(sidebarInstance) {
+                this.sidebarInstances.push(sidebarInstance);
+            }
+            closeAllExcept(activeInstance, callback) {
+                let remaining = this.sidebarInstances.length;
+                this.sidebarInstances.forEach((instance => {
+                    if (instance !== activeInstance) instance.closeSidebar((() => {
+                        remaining -= 1;
+                        if (remaining === 0 && callback) callback();
+                    })); else remaining -= 1;
+                }));
+                bodyUnlock();
+                if (remaining === 0 && callback) callback();
+            }
+            togglePanel(activeInstance) {
+                if (activeInstance.isAnimating) return;
+                if (activeInstance.isSidebarOpen) {
+                    bodyUnlock();
+                    this.backgroundElement.style.zIndex = "";
+                    activeInstance.closeSidebar();
+                } else {
+                    bodyLock();
+                    this.backgroundElement.style.zIndex = "11";
+                    this.closeAllExcept(activeInstance, (() => {
+                        activeInstance.openSidebar();
+                    }));
+                }
+            }
+            addGlobalEventListeners() {
+                document.addEventListener("click", (event => {
+                    this.sidebarInstances.forEach((instance => instance.handleOutsideClick(event)));
+                }));
+            }
+        }
+        class Sidebar {
+            constructor(config, manager) {
+                const {sidebarElementSelector, toggleButtonSelector, htmlClass} = config;
+                this.sidebarElement = document.querySelector(sidebarElementSelector);
+                this.toggleButtons = document.querySelectorAll(toggleButtonSelector);
                 this.htmlClass = htmlClass;
-                this.htmlElement = document.documentElement;
                 this.manager = manager;
                 this.isAnimating = false;
-                this.isCatalogOpen = false;
-                this.animationDuration = animationDuration || 400;
-                if (!this.animatedBackground || !this.leftSidebar || !this.catalogSidebar || !this.catalogToggleButton) {
-                    console.error("Не удалось найти все необходимые элементы для работы скрипта.");
-                    return;
-                }
+                this.isSidebarOpen = false;
+                if (!this.sidebarElement) throw new Error(`Не удалось найти элемент с селектором "${sidebarElementSelector}".`);
+                if (!this.toggleButtons.length) throw new Error("Не удалось найти кнопки для открытия сайдбара.");
                 if (this.manager) this.manager.register(this);
-                this.bindEvents();
+                this.addEventListeners();
             }
-            bindEvents() {
-                this.catalogToggleButton.addEventListener("click", (() => this.toggleCatalog()));
+            addEventListeners() {
+                this.toggleButtons.forEach((button => {
+                    button.addEventListener("click", (() => this.toggleSidebar()));
+                }));
             }
-            easeInOut(t) {
-                return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+            easeInOut(progress) {
+                return progress < .5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
             }
-            animateCatalogSidebar(startTime, callback) {
+            animateSidebar(startTime, callback) {
                 const currentTime = performance.now();
                 const elapsedTime = currentTime - startTime;
-                const progress = Math.min(elapsedTime / this.animationDuration, 1);
+                const progress = Math.min(elapsedTime / 300, 1);
                 const easedProgress = this.easeInOut(progress);
-                const leftSidebarWidth = this.leftSidebar.offsetWidth;
-                const catalogSidebarWidth = this.catalogSidebar.offsetWidth;
-                const sidebarPosition = this.isCatalogOpen ? -catalogSidebarWidth * easedProgress : -catalogSidebarWidth + catalogSidebarWidth * easedProgress;
-                const backgroundWidth = this.isCatalogOpen ? leftSidebarWidth + catalogSidebarWidth * (1 - easedProgress) : leftSidebarWidth + catalogSidebarWidth * easedProgress;
-                this.catalogSidebar.style.left = `${sidebarPosition}px`;
-                this.animatedBackground.style.width = `${backgroundWidth}px`;
-                if (progress < 1) requestAnimationFrame((() => this.animateCatalogSidebar(startTime, callback))); else {
+                const leftSidebarWidth = this.manager.leftSidebarElement.offsetWidth;
+                const sidebarWidth = this.sidebarElement.offsetWidth;
+                const sidebarPosition = this.isSidebarOpen ? -sidebarWidth * easedProgress : -sidebarWidth + sidebarWidth * easedProgress;
+                const backgroundWidth = this.isSidebarOpen ? leftSidebarWidth + sidebarWidth * (1 - easedProgress) : leftSidebarWidth + sidebarWidth * easedProgress;
+                this.sidebarElement.style.left = `${sidebarPosition}px`;
+                this.manager.backgroundElement.style.width = `${backgroundWidth}px`;
+                if (progress < 1) requestAnimationFrame((() => this.animateSidebar(startTime, callback))); else {
                     this.finalizeAnimation();
                     if (callback) callback();
                 }
             }
             finalizeAnimation() {
                 this.isAnimating = false;
-                if (this.isCatalogOpen) this.htmlElement.classList.remove(this.htmlClass);
-                this.isCatalogOpen = !this.isCatalogOpen;
+                if (this.isSidebarOpen) this.manager.htmlDocument.classList.remove(this.htmlClass);
+                this.isSidebarOpen = !this.isSidebarOpen;
             }
-            toggleCatalog() {
+            toggleSidebar() {
                 if (this.isAnimating) return;
                 if (this.manager) this.manager.togglePanel(this);
             }
-            closeCatalog(callback) {
-                if (this.isCatalogOpen && !this.isAnimating) {
+            closeSidebar(callback) {
+                if (this.isSidebarOpen && !this.isAnimating) {
                     this.isAnimating = true;
                     const startTime = performance.now();
-                    this.animateCatalogSidebar(startTime, (() => {
+                    this.animateSidebar(startTime, (() => {
                         if (callback) callback();
                     }));
                 } else if (callback) callback();
             }
-            openCatalog() {
-                if (!this.isCatalogOpen && !this.isAnimating) {
+            openSidebar() {
+                if (!this.isSidebarOpen && !this.isAnimating) {
+                    if (this.sidebarElement.querySelector("input")) setTimeout((() => {
+                        this.sidebarElement.querySelector("input").focus();
+                    }), 200);
                     this.isAnimating = true;
-                    this.htmlElement.classList.add(this.htmlClass);
+                    this.manager.htmlDocument.classList.add(this.htmlClass);
                     const startTime = performance.now();
-                    this.animateCatalogSidebar(startTime);
+                    this.animateSidebar(startTime);
                 }
             }
             handleOutsideClick(event) {
-                if (this.isCatalogOpen && !this.catalogSidebar.contains(event.target) && !this.catalogToggleButton.contains(event.target)) this.manager.closeAllExcept(null);
+                if (this.isSidebarOpen && !this.sidebarElement.contains(event.target) && ![ ...this.toggleButtons ].some((button => button.contains(event.target)))) this.manager.closeAllExcept(null);
             }
         }
-        class CatalogSidebarManager {
-            constructor() {
-                this.instances = [];
-                this.isAnimating = false;
-                this.bindEvents();
-            }
-            register(instance) {
-                this.instances.push(instance);
-            }
-            closeAllExcept(activeInstance, callback) {
-                let remaining = this.instances.length;
-                let anyPanelOpen = false;
-                this.instances.forEach((instance => {
-                    if (instance.isCatalogOpen) anyPanelOpen = true;
-                    if (instance !== activeInstance) instance.closeCatalog((() => {
-                        remaining -= 1;
-                        if (remaining === 0 && callback) callback();
-                    })); else remaining -= 1;
-                }));
-                if (!anyPanelOpen) bodyUnlock();
-                if (remaining === 0 && callback) callback();
-            }
-            togglePanel(activeInstance) {
-                if (this.isAnimating) return;
-                if (activeInstance.isCatalogOpen) {
-                    this.isAnimating = true;
-                    activeInstance.closeCatalog((() => {
-                        bodyUnlock();
-                        this.isAnimating = false;
-                    }));
-                } else {
-                    this.isAnimating = true;
-                    this.closeAllExcept(activeInstance, (() => {
-                        bodyLock();
-                        activeInstance.openCatalog();
-                        this.isAnimating = false;
-                    }));
-                }
-            }
-            bindEvents() {
-                document.addEventListener("click", (event => {
-                    this.instances.forEach((instance => instance.handleOutsideClick(event)));
-                }));
-            }
-        }
-        const sidebarManager = new CatalogSidebarManager;
-        new CatalogSidebar({
-            animatedBackground: ".animated-bg-ibg",
-            leftSidebar: ".left-sidebar",
-            catalogSidebar: ".sidebar-catalog__wrapper",
-            catalogToggleButton: ".js-catalog-btn",
-            htmlClass: "sidebar-open",
-            animationDuration: 300
+        const sidebarManager = new SidebarManager;
+        new Sidebar({
+            sidebarElementSelector: ".sidebar-catalog__wrapper",
+            toggleButtonSelector: ".js-catalog-btn",
+            htmlClass: "sidebar-open"
         }, sidebarManager);
-        new CatalogSidebar({
-            animatedBackground: ".animated-bg-ibg",
-            leftSidebar: ".left-sidebar",
-            catalogSidebar: ".search-modal__wrapper",
-            catalogToggleButton: ".js-search-btn",
-            htmlClass: "search-open",
-            animationDuration: 300
+        new Sidebar({
+            sidebarElementSelector: ".search-modal__wrapper",
+            toggleButtonSelector: ".js-search-btn",
+            htmlClass: "search-open"
         }, sidebarManager);
         const footer = document.querySelector(".footer");
         const animatedBg = document.querySelector(".animated-bg-ibg");
@@ -4211,33 +4497,37 @@
             const footerBottom = footerTop + footer.offsetHeight;
             const viewportHeight = window.innerHeight;
             const scrollPosition = window.scrollY;
-            if (window.matchMedia("(max-width:991.98px)").matches) {
-                animatedBg.style.zIndex = "";
-                animatedBg.style.width = "";
-                leftSidebar.style.top = "";
-                leftSidebar.style.bottom = "";
+            if (scrollPosition + viewportHeight < footerTop || scrollPosition > footerBottom || window.matchMedia("(max-width:991.98px)").matches) {
+                document.documentElement.classList.remove("footer-animating");
+                animatedBg.style.removeProperty("width");
+                animatedBg.style.removeProperty("right");
+                animatedBg.style.removeProperty("left");
+                leftSidebar.style.removeProperty("top");
+                leftSidebar.style.removeProperty("bottom");
                 return;
             }
-            if (scrollPosition + viewportHeight < footerTop || scrollPosition > footerBottom) {
-                animatedBg.style.zIndex = "";
-                animatedBg.style.width = "";
-                leftSidebar.style.top = "";
-                leftSidebar.style.bottom = "";
-                return;
-            }
+            document.documentElement.classList.add("footer-animating");
             const startScroll = footerTop - viewportHeight;
-            const endScroll = footerTop;
-            const progress = Math.min(Math.max((scrollPosition - startScroll) / (endScroll - startScroll), 0), 1);
-            if (progress > 0) animatedBg.style.zIndex = "1";
+            const footerHeight = footerBottom - footerTop < 800 ? footerBottom - footerTop : 800;
+            const progress = Math.min(Math.max((scrollPosition - startScroll) / footerHeight, 0), 1);
             const leftSidebarWidth = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--left-sidebar"), 10);
-            const screenWidth = window.innerWidth;
-            const newWidth = leftSidebarWidth + progress * (screenWidth - leftSidebarWidth);
+            const newLeft = -50 + progress * 50;
+            const adjustedLeft = leftSidebarWidth / 2 * (1 - progress) + newLeft / 100 * window.innerWidth;
             leftSidebar.style.top = `-${scrollPosition - startScroll}px`;
             leftSidebar.style.bottom = `${scrollPosition - startScroll}px`;
-            animatedBg.style.width = `${newWidth}px`;
+            animatedBg.style.width = "100%";
+            animatedBg.style.right = "auto";
+            animatedBg.style.left = `${adjustedLeft}px`;
         }
         window.addEventListener("scroll", moveImageWidth);
         moveImageWidth();
+        document.addEventListener("DOMContentLoaded", (function() {
+            new hc_sticky(".main-catalog__sidebar-wrapper", {
+                stickTo: ".main-catalog__sidebar",
+                top: 50,
+                bottom: 50
+            });
+        }));
         function isWebp() {
             function testWebP(callback) {
                 let webP = new Image;
@@ -4271,6 +4561,13 @@
                 return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
             }
         };
+        function addLoadedClass() {
+            if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
+                setTimeout((function() {
+                    document.documentElement.classList.add("loaded");
+                }), 0);
+            }));
+        }
         function functions_getHash() {
             if (location.hash) return location.hash.replace("#", "");
         }
@@ -4632,10 +4929,7 @@
                 if (showMoreType === "items") {
                     const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 3;
                     const showMoreItems = showMoreContent.children;
-                    if (showMoreContent.children.length <= showMoreTypeValue) {
-                        console.log(showMoreItems);
-                        return;
-                    }
+                    if (showMoreContent.children.length <= showMoreTypeValue) return;
                     for (let index = 1; index < showMoreItems.length; index++) {
                         const showMoreItem = showMoreItems[index - 1];
                         hiddenHeight += showMoreItem.offsetHeight;
@@ -5058,7 +5352,6 @@
             if (options.viewPass) {
                 const passInputs = document.querySelectorAll('[type="password"]');
                 passInputs.forEach((input => {
-                    console.log(input);
                     input.insertAdjacentHTML("afterend", '<div class="form__viewpass"></div>');
                 }));
                 document.addEventListener("click", (function(e) {
@@ -10574,6 +10867,258 @@
                 destroy
             });
         }
+        function Autoplay(_ref) {
+            let {swiper, extendParams, on, emit, params} = _ref;
+            swiper.autoplay = {
+                running: false,
+                paused: false,
+                timeLeft: 0
+            };
+            extendParams({
+                autoplay: {
+                    enabled: false,
+                    delay: 3e3,
+                    waitForTransition: true,
+                    disableOnInteraction: false,
+                    stopOnLastSlide: false,
+                    reverseDirection: false,
+                    pauseOnMouseEnter: false
+                }
+            });
+            let timeout;
+            let raf;
+            let autoplayDelayTotal = params && params.autoplay ? params.autoplay.delay : 3e3;
+            let autoplayDelayCurrent = params && params.autoplay ? params.autoplay.delay : 3e3;
+            let autoplayTimeLeft;
+            let autoplayStartTime = (new Date).getTime();
+            let wasPaused;
+            let isTouched;
+            let pausedByTouch;
+            let touchStartTimeout;
+            let slideChanged;
+            let pausedByInteraction;
+            let pausedByPointerEnter;
+            function onTransitionEnd(e) {
+                if (!swiper || swiper.destroyed || !swiper.wrapperEl) return;
+                if (e.target !== swiper.wrapperEl) return;
+                swiper.wrapperEl.removeEventListener("transitionend", onTransitionEnd);
+                if (pausedByPointerEnter || e.detail && e.detail.bySwiperTouchMove) return;
+                resume();
+            }
+            const calcTimeLeft = () => {
+                if (swiper.destroyed || !swiper.autoplay.running) return;
+                if (swiper.autoplay.paused) wasPaused = true; else if (wasPaused) {
+                    autoplayDelayCurrent = autoplayTimeLeft;
+                    wasPaused = false;
+                }
+                const timeLeft = swiper.autoplay.paused ? autoplayTimeLeft : autoplayStartTime + autoplayDelayCurrent - (new Date).getTime();
+                swiper.autoplay.timeLeft = timeLeft;
+                emit("autoplayTimeLeft", timeLeft, timeLeft / autoplayDelayTotal);
+                raf = requestAnimationFrame((() => {
+                    calcTimeLeft();
+                }));
+            };
+            const getSlideDelay = () => {
+                let activeSlideEl;
+                if (swiper.virtual && swiper.params.virtual.enabled) activeSlideEl = swiper.slides.filter((slideEl => slideEl.classList.contains("swiper-slide-active")))[0]; else activeSlideEl = swiper.slides[swiper.activeIndex];
+                if (!activeSlideEl) return;
+                const currentSlideDelay = parseInt(activeSlideEl.getAttribute("data-swiper-autoplay"), 10);
+                return currentSlideDelay;
+            };
+            const run = delayForce => {
+                if (swiper.destroyed || !swiper.autoplay.running) return;
+                cancelAnimationFrame(raf);
+                calcTimeLeft();
+                let delay = typeof delayForce === "undefined" ? swiper.params.autoplay.delay : delayForce;
+                autoplayDelayTotal = swiper.params.autoplay.delay;
+                autoplayDelayCurrent = swiper.params.autoplay.delay;
+                const currentSlideDelay = getSlideDelay();
+                if (!Number.isNaN(currentSlideDelay) && currentSlideDelay > 0 && typeof delayForce === "undefined") {
+                    delay = currentSlideDelay;
+                    autoplayDelayTotal = currentSlideDelay;
+                    autoplayDelayCurrent = currentSlideDelay;
+                }
+                autoplayTimeLeft = delay;
+                const speed = swiper.params.speed;
+                const proceed = () => {
+                    if (!swiper || swiper.destroyed) return;
+                    if (swiper.params.autoplay.reverseDirection) {
+                        if (!swiper.isBeginning || swiper.params.loop || swiper.params.rewind) {
+                            swiper.slidePrev(speed, true, true);
+                            emit("autoplay");
+                        } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                            swiper.slideTo(swiper.slides.length - 1, speed, true, true);
+                            emit("autoplay");
+                        }
+                    } else if (!swiper.isEnd || swiper.params.loop || swiper.params.rewind) {
+                        swiper.slideNext(speed, true, true);
+                        emit("autoplay");
+                    } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                        swiper.slideTo(0, speed, true, true);
+                        emit("autoplay");
+                    }
+                    if (swiper.params.cssMode) {
+                        autoplayStartTime = (new Date).getTime();
+                        requestAnimationFrame((() => {
+                            run();
+                        }));
+                    }
+                };
+                if (delay > 0) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout((() => {
+                        proceed();
+                    }), delay);
+                } else requestAnimationFrame((() => {
+                    proceed();
+                }));
+                return delay;
+            };
+            const start = () => {
+                autoplayStartTime = (new Date).getTime();
+                swiper.autoplay.running = true;
+                run();
+                emit("autoplayStart");
+            };
+            const stop = () => {
+                swiper.autoplay.running = false;
+                clearTimeout(timeout);
+                cancelAnimationFrame(raf);
+                emit("autoplayStop");
+            };
+            const pause = (internal, reset) => {
+                if (swiper.destroyed || !swiper.autoplay.running) return;
+                clearTimeout(timeout);
+                if (!internal) pausedByInteraction = true;
+                const proceed = () => {
+                    emit("autoplayPause");
+                    if (swiper.params.autoplay.waitForTransition) swiper.wrapperEl.addEventListener("transitionend", onTransitionEnd); else resume();
+                };
+                swiper.autoplay.paused = true;
+                if (reset) {
+                    if (slideChanged) autoplayTimeLeft = swiper.params.autoplay.delay;
+                    slideChanged = false;
+                    proceed();
+                    return;
+                }
+                const delay = autoplayTimeLeft || swiper.params.autoplay.delay;
+                autoplayTimeLeft = delay - ((new Date).getTime() - autoplayStartTime);
+                if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop) return;
+                if (autoplayTimeLeft < 0) autoplayTimeLeft = 0;
+                proceed();
+            };
+            const resume = () => {
+                if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop || swiper.destroyed || !swiper.autoplay.running) return;
+                autoplayStartTime = (new Date).getTime();
+                if (pausedByInteraction) {
+                    pausedByInteraction = false;
+                    run(autoplayTimeLeft);
+                } else run();
+                swiper.autoplay.paused = false;
+                emit("autoplayResume");
+            };
+            const onVisibilityChange = () => {
+                if (swiper.destroyed || !swiper.autoplay.running) return;
+                const document = ssr_window_esm_getDocument();
+                if (document.visibilityState === "hidden") {
+                    pausedByInteraction = true;
+                    pause(true);
+                }
+                if (document.visibilityState === "visible") resume();
+            };
+            const onPointerEnter = e => {
+                if (e.pointerType !== "mouse") return;
+                pausedByInteraction = true;
+                pausedByPointerEnter = true;
+                if (swiper.animating || swiper.autoplay.paused) return;
+                pause(true);
+            };
+            const onPointerLeave = e => {
+                if (e.pointerType !== "mouse") return;
+                pausedByPointerEnter = false;
+                if (swiper.autoplay.paused) resume();
+            };
+            const attachMouseEvents = () => {
+                if (swiper.params.autoplay.pauseOnMouseEnter) {
+                    swiper.el.addEventListener("pointerenter", onPointerEnter);
+                    swiper.el.addEventListener("pointerleave", onPointerLeave);
+                }
+            };
+            const detachMouseEvents = () => {
+                if (swiper.el && typeof swiper.el !== "string") {
+                    swiper.el.removeEventListener("pointerenter", onPointerEnter);
+                    swiper.el.removeEventListener("pointerleave", onPointerLeave);
+                }
+            };
+            const attachDocumentEvents = () => {
+                const document = ssr_window_esm_getDocument();
+                document.addEventListener("visibilitychange", onVisibilityChange);
+            };
+            const detachDocumentEvents = () => {
+                const document = ssr_window_esm_getDocument();
+                document.removeEventListener("visibilitychange", onVisibilityChange);
+            };
+            on("init", (() => {
+                if (swiper.params.autoplay.enabled) {
+                    attachMouseEvents();
+                    attachDocumentEvents();
+                    start();
+                }
+            }));
+            on("destroy", (() => {
+                detachMouseEvents();
+                detachDocumentEvents();
+                if (swiper.autoplay.running) stop();
+            }));
+            on("_freeModeStaticRelease", (() => {
+                if (pausedByTouch || pausedByInteraction) resume();
+            }));
+            on("_freeModeNoMomentumRelease", (() => {
+                if (!swiper.params.autoplay.disableOnInteraction) pause(true, true); else stop();
+            }));
+            on("beforeTransitionStart", ((_s, speed, internal) => {
+                if (swiper.destroyed || !swiper.autoplay.running) return;
+                if (internal || !swiper.params.autoplay.disableOnInteraction) pause(true, true); else stop();
+            }));
+            on("sliderFirstMove", (() => {
+                if (swiper.destroyed || !swiper.autoplay.running) return;
+                if (swiper.params.autoplay.disableOnInteraction) {
+                    stop();
+                    return;
+                }
+                isTouched = true;
+                pausedByTouch = false;
+                pausedByInteraction = false;
+                touchStartTimeout = setTimeout((() => {
+                    pausedByInteraction = true;
+                    pausedByTouch = true;
+                    pause(true);
+                }), 200);
+            }));
+            on("touchEnd", (() => {
+                if (swiper.destroyed || !swiper.autoplay.running || !isTouched) return;
+                clearTimeout(touchStartTimeout);
+                clearTimeout(timeout);
+                if (swiper.params.autoplay.disableOnInteraction) {
+                    pausedByTouch = false;
+                    isTouched = false;
+                    return;
+                }
+                if (pausedByTouch && swiper.params.cssMode) resume();
+                pausedByTouch = false;
+                isTouched = false;
+            }));
+            on("slideChange", (() => {
+                if (swiper.destroyed || !swiper.autoplay.running) return;
+                slideChanged = true;
+            }));
+            Object.assign(swiper.autoplay, {
+                start,
+                stop,
+                pause,
+                resume
+            });
+        }
         function Thumb(_ref) {
             let {swiper, extendParams, on} = _ref;
             extendParams({
@@ -10719,33 +11264,23 @@
             });
         }
         function initSliders() {
-            if (document.querySelector(".qwe")) new swiper_core_Swiper(".qwe", {
-                modules: [ Navigation ],
-                observer: true,
-                observeParents: true,
-                slidesPerView: 1,
-                spaceBetween: 0,
-                autoHeight: true,
-                speed: 800,
-                navigation: {
-                    prevEl: ".swiper-button-prev",
-                    nextEl: ".swiper-button-next"
-                },
-                on: {}
-            });
             if (document.querySelector(".mp-fb-main-slider")) {
                 let bgSlider = new swiper_core_Swiper(".mp-fb-bg-slider", {
                     el: ".mp-fb-bg-slider",
                     loop: true
                 });
                 new swiper_core_Swiper(".mp-fb-main-slider", {
-                    modules: [ Pagination ],
+                    modules: [ Pagination, Autoplay, Navigation ],
                     slidesPerView: 1,
                     spaceBetween: 0,
                     loop: true,
                     pagination: {
                         el: ".mp-fb-main-slider .swiper-pagination",
                         clickable: true
+                    },
+                    navigation: {
+                        prevEl: ".mp-fb-slider-nav .swiper-button-prev",
+                        nextEl: ".mp-fb-slider-nav .swiper-button-next"
                     },
                     on: {
                         slideNextTransitionStart: function(swiper) {
@@ -10754,6 +11289,11 @@
                         slidePrevTransitionStart: function() {
                             bgSlider.slidePrev();
                         }
+                    },
+                    effect: "fade",
+                    autoplay: {
+                        delay: 5e3,
+                        disableOnInteraction: false
                     }
                 });
             }
@@ -10844,8 +11384,22 @@
                     }
                 });
             }
+            if (document.querySelector(".product-card__slider")) new swiper_core_Swiper(".product-card__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 300,
+                navigation: {
+                    prevEl: ".product-card__slider .swiper-button-prev",
+                    nextEl: ".product-card__slider .swiper-button-next"
+                },
+                on: {}
+            });
         }
-        window.addEventListener("load", (function(e) {
+        window.initSliders = initSliders;
+        window.addEventListener("DOMContentLoaded", (function(e) {
             initSliders();
         }));
         let addWindowScrollEvent = false;
@@ -14008,8 +14562,9 @@ PERFORMANCE OF THIS SOFTWARE.
             lte: "Это значение должно быть меньше или равно.",
             notequalto: "Это значение должно отличаться."
         });
-        window["FLS"] = true;
+        window["FLS"] = false;
         isWebp();
+        addLoadedClass();
         menuInit();
         spollers();
         tabs();

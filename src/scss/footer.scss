@@ -7,21 +7,24 @@
 
    &::after {
       content: '';
-      background: linear-gradient(0deg, rgba(0, 0, 0) 0%, #000 47%, rgba(0, 0, 0, 0) 75%);
+      background: linear-gradient(0deg, #575757 0%, #575757 20%, rgba(87, 87, 87, 0) 50%);
+
       position: absolute;
       inset: 0;
       width: calc(100% + var(--left-sidebar));
       transform: translateX(calc(0.000001% - var(--left-sidebar)));
       z-index: 1;
 
-      @media (max-width:em(849.98)) {
-         background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #000 65%, rgba(0, 0, 0, 0) 82%);
+      @media (max-width:$lg) {
+         background: linear-gradient(0deg, #575757 0%, #575757 40%, rgba(87, 87, 87, 0) 70%);
       }
-   }
 
-   a {
-      &:hover {
-         text-decoration: underline;
+      .main-page & {
+         background: linear-gradient(0deg, #575757 0%, #575757 47%, rgba(87, 87, 87, 0) 75%);
+
+         @media (max-width:em(849.98)) {
+            background: linear-gradient(0deg, #575757 0%, #575757 65%, rgba(87, 87, 87, 0) 82%);
+         }
       }
    }
 
@@ -38,13 +41,26 @@
          padding-top: 0;
       }
 
+      a {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+
       @media (max-width:em(1920.98)) {
          max-width: 100%;
          padding-left: 0;
       }
 
+      @media (max-width:$xl) {
+         padding-bottom: rem(82);
+         padding-top: rem(99);
+      }
+
       @media (max-width:$lg) {
          padding-left: rem(20);
+         padding-bottom: rem(82);
+         padding-top: rem(99);
       }
 
       @media (max-width:$md) {
@@ -236,6 +252,8 @@
    // .footer__social
 
    &__social {
+      display: none;
+
       @media (max-width:$lg) {
          grid-column: 2/3;
          grid-row: 2/3;
@@ -289,6 +307,7 @@
             &:not(:last-child) {
                grid-column: auto;
                grid-row: auto;
+               color: #fff;
             }
 
          }

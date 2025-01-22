@@ -23,195 +23,388 @@
                   <span>Сбросить фильтры</span>
                </button>
             </div>
-            <select>
-               <option value="1" selected>Показывать по 15</option>
-               <option value="2">Показывать по 30</option>
-               <option value="3">Показывать по 60</option>
-            </select>
          </div>
          <div class="main-catalog__grid">
             <div class="main-catalog__sidebar" data-da="#filters-more .popup__filters, 991.98">
-               <div class="main-catalog__back-links">
-                  <a href="" class="main-catalog__back-link">
-                     <svg>
-                        <use xlink:href="img/icons/icons.svg#back-btn"></use>
-                     </svg>
-                     <span>Женщинам</span>
-                  </a>
-                  <a href="" class="main-catalog__back-link">
-                     <svg>
-                        <use xlink:href="img/icons/icons.svg#back-btn"></use>
-                     </svg>
-                     <span>Куртки</span>
-                  </a>
-               </div>
-               <div class="main-catalog__categories">
-                  <div class="main-catalog__category-title">Куртки</div>
-                  <div class="main-catalog__category-links">
-                     <a href="" class="main-catalog__category-link _active">Влагозащитные</a>
-                     <a href="" class="main-catalog__category-link">Утепленные</a>
-                     <a href="" class="main-catalog__category-link">Облегченные</a>
+               <div class="main-catalog__sidebar-wrapper">
+                  <div class="main-catalog__back-links">
+                     <a href="" class="main-catalog__back-link">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#back-btn"></use>
+                        </svg>
+                        <span> 5 Противоэнцефалитная одежда </span>
+                     </a>
+                     <a href="" class="main-catalog__back-link">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#back-btn"></use>
+                        </svg>
+                        <span>Куртки</span>
+                     </a>
                   </div>
-               </div>
-               <div class="main-catalog__filters filters" data-showmore="items">
-                  <div class="filters__wrapper">
-                     <div class="filters__content" data-showmore-content="4">
-                        <div class="filters__price">
-                           <div class="filters__box-header">
-                              <div class="filters__filter-title">Цена (₽)</div>
-                           </div>
-                           <div class="price">
-                              <div class="price__inputs">
-                                 <input autocomplete="off" type="number" name="form[]" placeholder="" class="price__input js_input-from">
-                                 <span>—</span>
-                                 <input autocomplete="off" type="number" name="form[]" placeholder="" class="price__input js_input-to">
+                  <div class="main-catalog__categories">
+                     <div class="main-catalog__category-title">Куртки</div>
+                     <div class="main-catalog__category-links">
+                        <a href="" class="main-catalog__category-link _active"> Костюм детский противоэнцефалитный "Тайга-Д"</a>
+                        <a href="" class="main-catalog__category-link">Утепленные</a>
+                        <a href="" class="main-catalog__category-link">Облегченные</a>
+                     </div>
+                  </div>
+                  <div class="main-catalog__filters filters">
+                     <div class="filters__wrapper">
+                        <div class="filters__content">
+                           <div class="filters__price">
+                              <div class="filters__box-header">
+                                 <div class="filters__filter-title">Цена (₽)</div>
                               </div>
-                              <div class="price__range-slider">
-                                 <div id="range" data-from="0" data-to="999999"></div>
+                              <div class="price">
+                                 <div class="price__inputs">
+                                    <input autocomplete="off" type="number" name="form[]" placeholder="" class="price__input js_input-from">
+                                    <span>—</span>
+                                    <input autocomplete="off" type="number" name="form[]" placeholder="" class="price__input js_input-to">
+                                 </div>
+                                 <div class="price__range-slider">
+                                    <div id="range" data-from="0" data-to="999999"></div>
+                                 </div>
                               </div>
                            </div>
-                        </div>
-                        <div class="filters__box">
-                           <div class="filters__box-header">
-                              <div class="filters__filter-title">Тип</div>
+                           <div class="filters__box">
+                              <div class="filters__box-header">
+                                 <div class="filters__filter-title">Длиное название фильтра</div>
+                              </div>
+                              <div data-showmore="items" class="filters__box-wrapper">
+                                 <div data-showmore-content="6" class="filters__box-content">
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст1</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст2</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст3</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст4</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст5</span>
+                                    </label>
+                                 </div>
+                                 <button hidden data-showmore-button type="button" class="filters__show-btn"><span>раскрыть все</span><span>Скрыть</span></button>
+                              </div>
                            </div>
-                           <div class="filters__box-content">
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
+                           <div class="filters__box">
+                              <div class="filters__box-header">
+                                 <div class="filters__filter-title">Длиное название фильтра</div>
+                              </div>
+                              <div data-showmore="items" class="filters__box-wrapper">
+                                 <div data-showmore-content="6" class="filters__box-content">
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст1</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст2</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст3</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст4</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст5</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст6</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст7</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст8</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст9</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст10</span>
+                                    </label>
+                                 </div>
+                                 <button hidden data-showmore-button type="button" class="filters__show-btn"><span>раскрыть все</span><span>Скрыть</span></button>
+                              </div>
                            </div>
-                        </div>
-                        <div class="filters__box">
-                           <div class="filters__box-header">
-                              <div class="filters__filter-title">Тип</div>
+                           <div class="filters__box">
+                              <div class="filters__box-header">
+                                 <div class="filters__filter-title">Длиное название фильтра</div>
+                              </div>
+                              <div data-showmore="items" class="filters__box-wrapper">
+                                 <div data-showmore-content="6" class="filters__box-content">
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст1</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст2</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст3</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст4</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст5</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст6</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст7</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст8</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст9</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст10</span>
+                                    </label>
+                                 </div>
+                                 <button hidden data-showmore-button type="button" class="filters__show-btn"><span>раскрыть все</span><span>Скрыть</span></button>
+                              </div>
                            </div>
-                           <div class="filters__box-content">
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                           </div>
-                        </div>
-                        <div class="filters__box">
-                           <div class="filters__box-header">
-                              <div class="filters__filter-title">Тип</div>
-                           </div>
-                           <div class="filters__box-content">
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                           </div>
-                        </div>
-                        <div class="filters__box">
-                           <div class="filters__box-header">
-                              <div class="filters__filter-title">Тип</div>
-                           </div>
-                           <div class="filters__box-content">
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
-                              <label class="checkbox">
-                                 <input class="checkbox__input" type="checkbox">
-                                 <div class="checkbox__chunk"></div>
-                                 <span class="checkbox__text">Текст1</span>
-                              </label>
+                           <div class="filters__box">
+                              <div class="filters__box-header">
+                                 <div class="filters__filter-title">Длиное название фильтра</div>
+                              </div>
+                              <div data-showmore="items" class="filters__box-wrapper">
+                                 <div data-showmore-content="6" class="filters__box-content">
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст1</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст2</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст3</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст4</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст5</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст6</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст7</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст8</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст9</span>
+                                    </label>
+                                    <label class="checkbox">
+                                       <input class="checkbox__input" type="checkbox">
+                                       <div class="checkbox__chunk"></div>
+                                       <span class="checkbox__text">Текст10</span>
+                                    </label>
+                                 </div>
+                                 <button hidden data-showmore-button type="button" class="filters__show-btn"><span>раскрыть все</span><span>Скрыть</span></button>
+                              </div>
                            </div>
                         </div>
                      </div>
+                     <button type="reset" class="filters__reset-btn">
+                        <svg class="filters__reset-svg">
+                           <use xlink:href="img/icons/icons.svg#icon_reset"></use>
+                        </svg>
+                        <span>Сбросить фильтры</span>
+                     </button>
                   </div>
-                  <button class="filters__show-btn" hidden data-showmore-button type="button">
-                     <span>Раскрыть все фильтры</span>
-                     <span>Скрыть</span>
-                  </button>
-                  <button type="reset" class="filters__reset-btn">
-                     <svg class="filters__reset-svg">
-                        <use xlink:href="img/icons/icons.svg#icon_reset"></use>
-                     </svg>
-                     <span>Сбросить фильтры</span>
-                  </button>
                </div>
+            </div>
+            <div class="sort-box" data-one-select>
+               <select>
+                  <option value="1" selected>По умолчанию</option>
+                  <option value="2">По возрастанию цены</option>
+                  <option value="3">По убыванию цены</option>
+                  <option value="3">По алфавиту</option>
+               </select>
+               <select>
+                  <option value="1" selected>Показывать по 15</option>
+                  <option value="2">Показывать по 30</option>
+                  <option value="3">Показывать по 60</option>
+               </select>
             </div>
             <div class="main-catalog__content">
                <div class="main-catalog__cards">
-                  @@include('html/_product-card.htm',{
+                  @@include('html/_product-card__catalog-list.htm',{
                   "src":"img/product-card__image-1.png",
                   "name":"Ветровка для осеннего отдыха"
                   })
-                  @@include('html/_product-card.htm',{
+                  @@include('html/_product-card__catalog-list.htm',{
                   "src":"img/product-card__image-2.png",
                   "name":"Ветровка для хайкинга"
                   })
-                  @@include('html/_product-card.htm',{
+                  @@include('html/_product-card__catalog-list.htm',{
                   "src":"img/product-card__image-3.png",
                   "name":"Куртка спортивная утепленная"
                   })
-                  @@include('html/_product-card.htm',{
+                  @@include('html/_product-card__catalog-list.htm',{
                   "src":"img/product-card__image-4.png",
                   "name":"Костюм флисовый"
                   })
-                  @@include('html/_product-card.htm',{
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-5.png",
+                  "name":"Ветровка для осеннего отдыха"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-1.png",
+                  "name":"Ветровка для осеннего отдыха"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-2.png",
+                  "name":"Ветровка для хайкинга"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-3.png",
+                  "name":"Куртка спортивная утепленная"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-4.png",
+                  "name":"Костюм флисовый"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-5.png",
+                  "name":"Ветровка для осеннего отдыха"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-1.png",
+                  "name":"Ветровка для осеннего отдыха"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-2.png",
+                  "name":"Ветровка для хайкинга"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-3.png",
+                  "name":"Куртка спортивная утепленная"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-4.png",
+                  "name":"Костюм флисовый"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-5.png",
+                  "name":"Ветровка для осеннего отдыха"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-1.png",
+                  "name":"Ветровка для осеннего отдыха"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-2.png",
+                  "name":"Ветровка для хайкинга"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-3.png",
+                  "name":"Куртка спортивная утепленная"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-4.png",
+                  "name":"Костюм флисовый"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-5.png",
+                  "name":"Ветровка для осеннего отдыха"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-1.png",
+                  "name":"Ветровка для осеннего отдыха"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-2.png",
+                  "name":"Ветровка для хайкинга"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-3.png",
+                  "name":"Куртка спортивная утепленная"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
+                  "src":"img/product-card__image-4.png",
+                  "name":"Костюм флисовый"
+                  })
+                  @@include('html/_product-card__catalog-list.htm',{
                   "src":"img/product-card__image-5.png",
                   "name":"Ветровка для осеннего отдыха"
                   })

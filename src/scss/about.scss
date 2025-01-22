@@ -1,4 +1,5 @@
 .about {
+   display: none !important;
    margin-bottom: rem(64);
    // .about__container
 
@@ -192,6 +193,7 @@
 }
 
 .about-video {
+   display: none !important;
    background: #535559;
    padding: rem(73) 0;
 
@@ -367,6 +369,7 @@
    // .fabric__title
 
    &__title {
+      display: none !important;
       font-weight: 600;
       font-size: 30px;
       margin-bottom: rem(53);
@@ -425,7 +428,7 @@
          }
 
          &::before {
-            content: '';
+            // content: '';
             position: absolute;
             left: 50%;
             top: 56px;
@@ -462,6 +465,7 @@
       align-items: center;
       width: 53px;
       height: 53px;
+      display: none !important;
 
       @media (max-width:$xl) {
          left: 0;
@@ -518,7 +522,6 @@
    // .fabric__text
 
    &__text {
-      max-width: 478px;
       line-height: 167%;
 
       @media (max-width:$xl) {

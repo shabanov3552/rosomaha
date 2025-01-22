@@ -59,6 +59,17 @@
 		display: flex;
 		justify-content: center;
 		flex: 1 1 auto;
+
+		&:not(:has(.pagging__li)) {
+
+			li {
+				flex: 0 1 15%;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
 	}
 
 	// .pagging__li

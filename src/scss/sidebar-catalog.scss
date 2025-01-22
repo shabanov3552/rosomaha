@@ -12,6 +12,7 @@
 
    .sidebar-open & {
       display: block;
+      z-index: 11;
    }
 
    // .sidebar-catalog__wrapper

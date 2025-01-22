@@ -7,15 +7,50 @@
 	<meta name="format-detection" content="telephone=no">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241211203553" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250122182843" rel="stylesheet">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241211203553">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250122182843">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+	<style>
+		.preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 100000;
+			background-color: #fff;
+			transition: all 0.3s ease 0s;
+		}
+
+		.preloader img {
+			max-width: 100%;
+		}
+
+		.preloader .hide {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.loaded body .preloader {
+			opacity: 0;
+			visibility: hidden;
+		}
+	</style>
+	<div class="preloader"><img src="<?=SITE_TEMPLATE_PATHimg/preloader.webp" alt=""></div>
+<script>
+	if (window.location.pathname !== "/") {
+		document.querySelector('.preloader').style.display = 'none';
+	}
+</script>
 	<div class="wrapper ">
 		<header class="header">
 			<div class="header__container">
@@ -41,6 +76,7 @@
 						</a>
 						<div class="dropdown__block">
 							<div class="dropdown__links">
+								<a href="tel:88005007552" class="dropdown__link">8 800 500 75 52</a>
 								<a href="tel:88005007552" class="dropdown__link">8 800 500 75 52</a>
 							</div>
 						</div>
@@ -81,811 +117,827 @@
 							<div class="menu-mobile__links"></div>
 							<div class="mobile-catalog">
 
-								<div class="mobile-catalog__body">
+   <div class="mobile-catalog__body">
 
-									<div class="mobile-catalog__header">
-										<button type="button" class="mobile-catalog__back js-mobile-catalog-back"> <!-- Только для мобилки -->
-											<svg class="mobile-catalog__back-svg">
-												<use xlink:href="img/icons/icons.svg#arrow-back-mobile-catalog"></use>
-											</svg>
-										</button>
-										<button type="button" class="mobile-catalog__close js-mobile-catalog-close"> <!-- Только для мобилки -->
-											<svg class="mobile-catalog__close-svg">
-												<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-											</svg>
-										</button>
-									</div>
-									<div class="mobile-catalog__menu-chunk">
-										<nav class="mobile-catalog__menu">
-											<a href="" class="mobile-catalog__link" data-parent="1">
-												<span>Мужская одежда</span>
-											</a>
-											<a href="" class="mobile-catalog__link" data-parent="2">
-												<span>Женская одежда</span>
-											</a>
-											<a href="" class="mobile-catalog__link" data-parent="3">
-												<span>Детская одежда</span>
-											</a>
-											<a href="" class="mobile-catalog__link" data-parent="4">
-												<span>Аксессуары</span>
-											</a>
-											<a href="" class="mobile-catalog__link">
-												<span>Одежда для туризма и отдыха</span>
-											</a>
-											<a href="" class="mobile-catalog__link">
-												<span>Одежда горнолыжная</span>
-											</a>
-											<a href="" class="mobile-catalog__link">
-												<span>Одежда для охоты и рыбалки</span>
-											</a>
-											<a href="" class="mobile-catalog__link">
-												<span>Одежда от клещей</span>
-											</a>
-										</nav>
-									</div>
-									<div class="mobile-catalog__sub-catalog sidebar-sub-catalog">
-										<div class="sidebar-sub-catalog__wrapper">
-											<div data-submenu="1" class="sidebar-sub-catalog__chunk" hidden>
-												<div class="sidebar-sub-catalog__chunk-title">Мужская одежда</div>
-												<div class="sidebar-sub-catalog__grid">
-													<a href="" class="sidebar-sub-catalog__link">Куртки</a>
-													<a href="" class="sidebar-sub-catalog__link">Брюки</a>
-													<a href="" class="sidebar-sub-catalog__link">Костюмы</a>
-													<a href="" class="sidebar-sub-catalog__link">Комбинезоны</a>
-													<a href="" class="sidebar-sub-catalog__link">Жилеты</a>
-													<a href="" class="sidebar-sub-catalog__link">Одежда из флиса и футера</a>
-													<a href="" class="sidebar-sub-catalog__link">Термобелье</a>
-													<a href="" class="sidebar-sub-catalog__link">Футболки, толстовки</a>
-												</div>
+      <div class="mobile-catalog__header">
+         <button type="button" class="mobile-catalog__back js-mobile-catalog-back"> <!-- Только для мобилки -->
+            <svg class="mobile-catalog__back-svg">
+               <use xlink:href="img/icons/icons.svg#arrow-back-mobile-catalog"></use>
+            </svg>
+         </button>
+         <button type="button" class="mobile-catalog__close js-mobile-catalog-close"> <!-- Только для мобилки -->
+            <svg class="mobile-catalog__close-svg">
+               <use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+            </svg>
+         </button>
+      </div>
+      <div class="mobile-catalog__menu-chunk">
+         <nav class="mobile-catalog__menu">
+            <a href="" class="mobile-catalog__link" data-parent="1">
+               <span>Мужская одежда</span>
+            </a>
+            <a href="" class="mobile-catalog__link" data-parent="2">
+               <span>Женская одежда</span>
+            </a>
+            <a href="" class="mobile-catalog__link" data-parent="3">
+               <span>Детская одежда</span>
+            </a>
+            <a href="" class="mobile-catalog__link" data-parent="4">
+               <span>Аксессуары</span>
+            </a>
+            <a href="" class="mobile-catalog__link">
+               <span>Одежда для туризма и отдыха</span>
+            </a>
+            <a href="" class="mobile-catalog__link">
+               <span>Одежда горнолыжная</span>
+            </a>
+            <a href="" class="mobile-catalog__link">
+               <span>Одежда для охоты и рыбалки</span>
+            </a>
+            <a href="" class="mobile-catalog__link">
+               <span>Одежда от клещей</span>
+            </a>
+         </nav>
+      </div>
+      <div class="mobile-catalog__sub-catalog sidebar-sub-catalog">
+         <div class="sidebar-sub-catalog__wrapper">
+            <div data-submenu="1" class="sidebar-sub-catalog__chunk" hidden>
+               <div class="sidebar-sub-catalog__chunk-title">Мужская одежда</div>
+               <div class="sidebar-sub-catalog__grid">
+                  <a href="" class="sidebar-sub-catalog__link">Куртки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Брюки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Костюмы</a>
+                  <a href="" class="sidebar-sub-catalog__link">Комбинезоны</a>
+                  <a href="" class="sidebar-sub-catalog__link">Жилеты</a>
+                  <a href="" class="sidebar-sub-catalog__link">Одежда из флиса и футера</a>
+                  <a href="" class="sidebar-sub-catalog__link">Термобелье</a>
+                  <a href="" class="sidebar-sub-catalog__link">Футболки, толстовки</a>
+               </div>
 
-											</div>
-											<div data-submenu="2" class="sidebar-sub-catalog__chunk" hidden>
-												<div class="sidebar-sub-catalog__chunk-title">Женская одежда</div>
-												<div class="sidebar-sub-catalog__grid">
-													<a href="" class="sidebar-sub-catalog__link">Куртки</a>
-													<a href="" class="sidebar-sub-catalog__link">Брюки</a>
-													<a href="" class="sidebar-sub-catalog__link">Костюмы</a>
-													<a href="" class="sidebar-sub-catalog__link">Комбинезоны</a>
-													<a href="" class="sidebar-sub-catalog__link">Жилеты</a>
-													<a href="" class="sidebar-sub-catalog__link">Одежда из флиса и футера</a>
-													<a href="" class="sidebar-sub-catalog__link">Термобелье</a>
-													<a href="" class="sidebar-sub-catalog__link">Футболки, толстовки</a>
-												</div>
+            </div>
+            <div data-submenu="2" class="sidebar-sub-catalog__chunk" hidden>
+               <div class="sidebar-sub-catalog__chunk-title">Женская одежда</div>
+               <div class="sidebar-sub-catalog__grid">
+                  <a href="" class="sidebar-sub-catalog__link">Куртки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Брюки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Костюмы</a>
+                  <a href="" class="sidebar-sub-catalog__link">Комбинезоны</a>
+                  <a href="" class="sidebar-sub-catalog__link">Жилеты</a>
+                  <a href="" class="sidebar-sub-catalog__link">Одежда из флиса и футера</a>
+                  <a href="" class="sidebar-sub-catalog__link">Термобелье</a>
+                  <a href="" class="sidebar-sub-catalog__link">Футболки, толстовки</a>
+               </div>
 
-											</div>
-											<div data-submenu="3" class="sidebar-sub-catalog__chunk" hidden>
-												<div class="sidebar-sub-catalog__chunk-title">Детская одежда</div>
-												<div class="sidebar-sub-catalog__grid">
-													<a href="" class="sidebar-sub-catalog__link">Куртки</a>
-													<a href="" class="sidebar-sub-catalog__link">Брюки</a>
-													<a href="" class="sidebar-sub-catalog__link">Костюмы</a>
-													<a href="" class="sidebar-sub-catalog__link">Комбинезоны</a>
-													<a href="" class="sidebar-sub-catalog__link">Жилеты</a>
-													<a href="" class="sidebar-sub-catalog__link">Одежда из флиса и футера</a>
-													<a href="" class="sidebar-sub-catalog__link">Термобелье</a>
-													<a href="" class="sidebar-sub-catalog__link">Футболки, толстовки</a>
-												</div>
+            </div>
+            <div data-submenu="3" class="sidebar-sub-catalog__chunk" hidden>
+               <div class="sidebar-sub-catalog__chunk-title">Детская одежда</div>
+               <div class="sidebar-sub-catalog__grid">
+                  <a href="" class="sidebar-sub-catalog__link">Куртки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Брюки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Костюмы</a>
+                  <a href="" class="sidebar-sub-catalog__link">Комбинезоны</a>
+                  <a href="" class="sidebar-sub-catalog__link">Жилеты</a>
+                  <a href="" class="sidebar-sub-catalog__link">Одежда из флиса и футера</a>
+                  <a href="" class="sidebar-sub-catalog__link">Термобелье</a>
+                  <a href="" class="sidebar-sub-catalog__link">Футболки, толстовки</a>
+               </div>
 
-											</div>
-											<div data-submenu="4" class="sidebar-sub-catalog__chunk" hidden>
-												<div class="sidebar-sub-catalog__chunk-title">Аксессуары</div>
-												<div class="sidebar-sub-catalog__grid">
-													<a href="" class="sidebar-sub-catalog__link">Шапки</a>
-													<a href="" class="sidebar-sub-catalog__link">Балаклавы</a>
-													<a href="" class="sidebar-sub-catalog__link">Перчатки</a>
-													<a href="" class="sidebar-sub-catalog__link">Варежки</a>
-													<a href="" class="sidebar-sub-catalog__link">Рукавицы</a>
-													<a href="" class="sidebar-sub-catalog__link">Носки</a>
-												</div>
+            </div>
+            <div data-submenu="4" class="sidebar-sub-catalog__chunk" hidden>
+               <div class="sidebar-sub-catalog__chunk-title">Аксессуары</div>
+               <div class="sidebar-sub-catalog__grid">
+                  <a href="" class="sidebar-sub-catalog__link">Шапки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Балаклавы</a>
+                  <a href="" class="sidebar-sub-catalog__link">Перчатки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Варежки</a>
+                  <a href="" class="sidebar-sub-catalog__link">Рукавицы</a>
+                  <a href="" class="sidebar-sub-catalog__link">Носки</a>
+               </div>
 
-											</div>
-										</div>
-									</div>
+            </div>
+         </div>
+      </div>
 
-								</div>
+   </div>
 
-							</div>
+</div>
 						</div>
 					</nav>
 				</div>
 			</div>
 		</header>
-		<main class="page">
-			<div class="page__container">
-				<nav class="breadcrumbs">
-					<ul class="breadcrumbs__list">
-						<li class="breadcrumbs__li">
-							<a href="" class="breadcrumbs__link">
-								Главная
-							</a>
-						</li>
-						<li class="breadcrumbs__li">
-							<a href="" class="breadcrumbs__link">
-								Крошка
-							</a>
-						</li>
-						<li class="breadcrumbs__li">
-							<a href="" class="breadcrumbs__link">
-								Крошка
-							</a>
-						</li>
-						<li class="breadcrumbs__li">
-							<span class="breadcrumbs__item">Последняя крошка</span>
-						</li>
-					</ul>
-				</nav>
-				<div class="page__title">Как ухаживать за спортивной одеждой: Советы по стирке и хранению</div>
+<main class="page">
+   <div class="page__container">
+      <nav class="breadcrumbs">
+	<ul class="breadcrumbs__list">
+		<li class="breadcrumbs__li">
+			<a href="" class="breadcrumbs__link">
+				Главная
+			</a>
+		</li>
+		<li class="breadcrumbs__li">
+			<button class="breadcrumbs__link js-catalog-btn">
+				Каталог
+			</button>
+		</li>
+		<li class="breadcrumbs__li">
+			<a href="" class="breadcrumbs__link">
+				Крошка
+			</a>
+		</li>
+		<li class="breadcrumbs__li">
+			<span class="breadcrumbs__item">Последняя крошка</span>
+		</li>
+	</ul>
+</nav>
+      <div class="page__title">Как ухаживать за спортивной одеждой: Советы по стирке и хранению</div>
+   </div>
+   <div class="blog-detail">
+      <div class="blog-detail__container">
+         <div class="blog-detail__date">04.03.2025</div>
+         <div class="blog-detail__content">
+            <div class="blog-detail__row">
+               <div class="blog-detail__image-ibg"><img src="img/blog-2.webp" alt=""></div>
+               <div class="blog-detail__row-text">
+                  <div class="blog-detail__text">
+                     <p>Спортивная одежда играет важную роль в наших тренировках и активном отдыхе, поэтому правильный уход за ней поможет сохранить ее качество и продлить срок службы. Первое, на что стоит обратить внимание, это следование инструкциям по стирке, указанным на ярлыках. Обычно рекомендуется стирать спортивные вещи при низких температурах, чтобы избежать повреждений ткани и потери эластичности. Используйте специальные моющие средства, которые не содержат агрессивных химикатов, чтобы защитить функциональные свойства ткани.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="blog-detail__row">
+               <div class="blog-detail__image-ibg"><img src="img/blog-3.webp" alt=""></div>
+               <div class="blog-detail__row-text">
+                  <div class="blog-detail__text">
+                     <p>Перед стиркой важно подготовить одежду: выверните ее наизнанку, застегните молнии и липучки, а также удалите все лишние предметы из карманов. Это поможет избежать повреждений во время стирки. Если на одежде есть серьезные загрязнения, такие как пот или грязь, можно предварительно замочить её в воде с мягким моющим средством. Такой подход значительно облегчает процесс удаления пятен во время основного цикла стирки.</p>
+                  </div>
+                  <div class="blog-detail__text-highlighted">Избегайте использования сушилки, так как интенсивный нагрев может повредить ткань и сделать одежду менее удобной.</div>
+               </div>
+            </div>
+            <div class="blog-detail__row">
+               <div class="blog-detail__image-ibg"><img src="img/blog-4.webp" alt=""></div>
+               <div class="blog-detail__row-text">
+                  <div class="blog-detail__text">
+                     <p>Лучше всего развесить одежду на воздухе, давая ей высохнуть естественным образом. Это не только сохраняет форму изделия, но и позволяет избежать появления неприятных запахов, которые могут возникнуть после сушки в закрытом пространстве.</p>
+                     <p>Хранение спортивной одежды также бывает важным аспектом ухода. Убедитесь, что вещи полностью сухие перед тем, как убрать их в шкаф. Лучше всего складывать одежду в складные контейнеры или использовать специальные вешалки для сохранения формы. Также старайтесь сортировать одежду по видам применения (например, для бега, фитнеса или туризма), чтобы легко находить нужные вещи. Следуя этим простым советам, вы сможете наслаждаться своей спортивной экипировкой долгое время.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="about-video">
+      <div class="about-video__wrapper" data-popup="#video" data-popup-youtube="JNZX-oBJVEs">
+         <div class="about-video__image-ibg"><img src="img/about-video-2.webp" alt=""></div>
+         <div class="about-video__logo"><img src="img/logo_header.svg" alt=""></div>
+         <div class="about-video__title">Уход за спортивной одеждой</div>
+      </div>
+   </div>
+   <div class="page__container">
+      <div class="share-block">
+         <div class="share-block__row">
+            <div class="share-block__text">Поделиться статьей в мессенджерах и соцсетях:</div>
+            <!-- uSocial -->
+            <script async src="https://usocial.pro/usocial/usocial.js?uid=4a153ce207f61697&v=6.1.5&_v=20250122182843" data-script="usocial" charset="utf-8"></script>
+            <div class="uSocial-Share" data-pid="5ea0332829db6cc5b760c785d813075d" data-type="share" data-options="round-rect,style1,default,absolute,horizontal,size48,eachCounter0,counter0,mobile_position_right" data-social="telegram,vk,wa,ok"></div>
+            <!-- /uSocial -->
+         </div>
+      </div>
+   </div>
+   <div class="products-slider">
+   <div class="products-slider__container">
+      <div class="products-slider__header">
+         <div class="products-slider__title">Вас может заинтересовать</div>
+         <div class="products-slider__fraction"></div>
+      </div>
+      <div class="products-slider__slider swiper">
+         <div class="products-slider__wrapper swiper-wrapper">
+            <div class="products-slider__slide swiper-slide">
+               <div class="product-card">
+   <div class="product-card__top">
+      <div class="product-card__labels">
+         <span class="product-card__label product-card__label_pink">Новинка</span>
+         <span class="product-card__label product-card__label_blue">Хит</span>
+      </div>
+      <a href="" class="product-card__image-ibg"><img src="img/product-card__image-1.webp" alt=""></a>
+   </div>
+   <div class="product-card__content">
+      <a href="" class="product-card__name">Ветровка для осеннего отдыха</a>
+      <div class="product-card__price">
+         <div class="product-card__price-num">4 900 ₽</div>
+         <div class="product-card__price-text">– розничная цена</div>
+      </div>
+      <div class="product-card__buttons">
+         <a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
+         <button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
+      </div>
+   </div>
+</div>
+            </div>
+            <div class="products-slider__slide swiper-slide">
+               <div class="product-card">
+   <div class="product-card__top">
+      <div class="product-card__labels">
+         <span class="product-card__label product-card__label_pink">Новинка</span>
+         <span class="product-card__label product-card__label_blue">Хит</span>
+      </div>
+      <a href="" class="product-card__image-ibg"><img src="img/product-card__image-2.webp" alt=""></a>
+   </div>
+   <div class="product-card__content">
+      <a href="" class="product-card__name">Ветровка для хайкинга</a>
+      <div class="product-card__price">
+         <div class="product-card__price-num">4 900 ₽</div>
+         <div class="product-card__price-text">– розничная цена</div>
+      </div>
+      <div class="product-card__buttons">
+         <a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
+         <button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
+      </div>
+   </div>
+</div>
+            </div>
+            <div class="products-slider__slide swiper-slide">
+               <div class="product-card">
+   <div class="product-card__top">
+      <div class="product-card__labels">
+         <span class="product-card__label product-card__label_pink">Новинка</span>
+         <span class="product-card__label product-card__label_blue">Хит</span>
+      </div>
+      <a href="" class="product-card__image-ibg"><img src="img/product-card__image-3.webp" alt=""></a>
+   </div>
+   <div class="product-card__content">
+      <a href="" class="product-card__name">Куртка спортивная утепленная</a>
+      <div class="product-card__price">
+         <div class="product-card__price-num">4 900 ₽</div>
+         <div class="product-card__price-text">– розничная цена</div>
+      </div>
+      <div class="product-card__buttons">
+         <a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
+         <button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
+      </div>
+   </div>
+</div>
+            </div>
+            <div class="products-slider__slide swiper-slide">
+               <div class="product-card">
+   <div class="product-card__top">
+      <div class="product-card__labels">
+         <span class="product-card__label product-card__label_pink">Новинка</span>
+         <span class="product-card__label product-card__label_blue">Хит</span>
+      </div>
+      <a href="" class="product-card__image-ibg"><img src="img/product-card__image-4.webp" alt=""></a>
+   </div>
+   <div class="product-card__content">
+      <a href="" class="product-card__name">Костюм флисовый</a>
+      <div class="product-card__price">
+         <div class="product-card__price-num">4 900 ₽</div>
+         <div class="product-card__price-text">– розничная цена</div>
+      </div>
+      <div class="product-card__buttons">
+         <a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
+         <button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
+      </div>
+   </div>
+</div>
+            </div>
+            <div class="products-slider__slide swiper-slide">
+               <div class="product-card">
+   <div class="product-card__top">
+      <div class="product-card__labels">
+         <span class="product-card__label product-card__label_pink">Новинка</span>
+         <span class="product-card__label product-card__label_blue">Хит</span>
+      </div>
+      <a href="" class="product-card__image-ibg"><img src="img/product-card__image-5.webp" alt=""></a>
+   </div>
+   <div class="product-card__content">
+      <a href="" class="product-card__name">Ветровка для осеннего отдыха</a>
+      <div class="product-card__price">
+         <div class="product-card__price-num">4 900 ₽</div>
+         <div class="product-card__price-text">– розничная цена</div>
+      </div>
+      <div class="product-card__buttons">
+         <a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
+         <button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
+      </div>
+   </div>
+</div>
+            </div>
+         </div>
+      </div>
+      <button type="button" class="swiper-button-prev">
+         <svg>
+            <use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+         </svg>
+      </button>
+      <button type="button" class="swiper-button-next">
+         <svg>
+            <use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+         </svg>
+      </button>
+   </div>
+</div>
+   <div class="blog blog_read-more">
+      <div class="blog__container">
+         <div class="blog__main-title">Читайте также</div>
+         <div class="blog__row">
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Технологии тканей: Как выбрать правильную одежду для активного отдыха</a>
+               <div class="blog__descr">Обзор различных типов тканей, их свойств и преимуществ для спорта и туризма</div>
+               <div class="blog__image-ibg"><img src="img/blog-2.webp" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Технологии тканей: Как выбрать правильную одежду для активного отдыха</a>
+               <div class="blog__descr">Обзор различных типов тканей, их свойств и преимуществ для спорта и туризма</div>
+               <div class="blog__image-ibg"><img src="img/blog-2.webp" alt=""></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+<footer class="footer">
+	<div class="animated-bg-ibg"><img src="img/animated-bg.webp" alt=""></div>
+	<div class="left-sidebar">
+   <a href="" class="left-sidebar__logo">
+      <svg class="left-sidebar__logo-main">
+         <use xlink:href="img/icons/icons.svg#logo_sidebar"></use>
+      </svg>
+   </a>
+   <button type="button" class="left-sidebar__button left-sidebar__button_search js-search-btn">
+      <svg>
+         <use xlink:href="img/icons/icons.svg#icon_search"></use>
+      </svg>
+      <span>Поиск</span>
+   </button>
+   <button type="button" class="left-sidebar__button left-sidebar__button_catalog js-catalog-btn">
+      <svg>
+         <use xlink:href="img/icons/icons.svg#icon_burger"></use>
+      </svg>
+      <span>Каталог</span>
+   </button>
+   <div class="left-sidebar__links" data-da=".menu-mobile__links, 991.98,2">
+      <a href="" class="left-sidebar__link">
+         <img src="img/icons/ls-icon-1.svg" alt="">
+         <span>О бренде</span>
+      </a>
+      <a href="" class="left-sidebar__link">
+         <img src="img/icons/ls-icon-2.svg" alt="">
+         <span>Наши эксперты</span>
+      </a>
+      <a href="" class="left-sidebar__link">
+         <img src="img/icons/ls-icon-3.svg" alt="">
+         <span>Блог</span>
+      </a>
+      <a href="" class="left-sidebar__link">
+         <img src="img/icons/ls-icon-4.svg" alt="">
+         <span>Контакты</span>
+      </a>
+   </div>
+</div>
+	<div class="sidebar-catalog">
+   <div class="sidebar-catalog__wrapper">
+      <div class="sidebar-catalog__title">Каталог</div>
+      <div class="sidebar-catalog__content">
+         <div class="sidebar-catalog__top">
+            <div class="sidebar-catalog__chunk">
+               <a href="" class="sidebar-catalog__chunk-link">Мужская одежда</a>
+               <div class="sidebar-catalog__links">
+                  <a href="" class="sidebar-catalog__link">Куртки</a>
+                  <a href="" class="sidebar-catalog__link">Брюки</a>
+                  <a href="" class="sidebar-catalog__link">Костюмы</a>
+                  <a href="" class="sidebar-catalog__link">Комбинезоны</a>
+                  <a href="" class="sidebar-catalog__link">Жилеты</a>
+                  <a href="" class="sidebar-catalog__link">Одежда из флиса и футера</a>
+                  <a href="" class="sidebar-catalog__link">Термобелье</a>
+                  <a href="" class="sidebar-catalog__link">Футболки, толстовки</a>
+               </div>
+            </div>
+            <div class="sidebar-catalog__chunk">
+               <a href="" class="sidebar-catalog__chunk-link">Женская одежда</a>
+               <div class="sidebar-catalog__links">
+                  <a href="" class="sidebar-catalog__link">Куртки</a>
+                  <a href="" class="sidebar-catalog__link">Брюки</a>
+                  <a href="" class="sidebar-catalog__link">Костюмы</a>
+                  <a href="" class="sidebar-catalog__link">Комбинезоны</a>
+                  <a href="" class="sidebar-catalog__link">Жилеты</a>
+                  <a href="" class="sidebar-catalog__link">Одежда из флиса и футера</a>
+                  <a href="" class="sidebar-catalog__link">Термобелье</a>
+                  <a href="" class="sidebar-catalog__link">Футболки, толстовки</a>
+               </div>
+            </div>
+            <div class="sidebar-catalog__chunk">
+               <a href="" class="sidebar-catalog__chunk-link">Детская одежда</a>
+               <div class="sidebar-catalog__links">
+                  <a href="" class="sidebar-catalog__link">Куртки</a>
+                  <a href="" class="sidebar-catalog__link">Брюки</a>
+                  <a href="" class="sidebar-catalog__link">Костюмы</a>
+                  <a href="" class="sidebar-catalog__link">Комбинезоны</a>
+                  <a href="" class="sidebar-catalog__link">Жилеты</a>
+                  <a href="" class="sidebar-catalog__link">Одежда из флиса и футера</a>
+                  <a href="" class="sidebar-catalog__link">Термобелье</a>
+                  <a href="" class="sidebar-catalog__link">Футболки, толстовки</a>
+               </div>
+            </div>
+            <div class="sidebar-catalog__chunk">
+               <a href="" class="sidebar-catalog__chunk-link">Аксессуары</a>
+               <div class="sidebar-catalog__links">
+                  <a href="" class="sidebar-catalog__link">Шапки</a>
+                  <a href="" class="sidebar-catalog__link">Балаклавы</a>
+                  <a href="" class="sidebar-catalog__link">Перчатки</a>
+                  <a href="" class="sidebar-catalog__link">Варежки</a>
+                  <a href="" class="sidebar-catalog__link">Рукавицы</a>
+                  <a href="" class="sidebar-catalog__link">Носки</a>
+               </div>
+            </div>
+         </div>
+         <div class="sidebar-catalog__bottom">
+            <a href="" class="sidebar-catalog__chunk-link">Одежда для туризма и отдыха</a>
+            <a href="" class="sidebar-catalog__chunk-link">Одежда горнолыжная</a>
+            <a href="" class="sidebar-catalog__chunk-link">Одежда для охоты и рыбалки</a>
+            <a href="" class="sidebar-catalog__chunk-link">Одежда от клещей</a>
+         </div>
+      </div>
+   </div>
+</div>
+	<div class="search-modal">
+   <button type="button" class="search-modal__close js-search-close">
+      <svg>
+         <use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+      </svg>
+   </button>
+   <div class="search-modal__wrapper">
+      <form action="" class="search-modal__form form">
+         <div class="form__line">
+            <label for="" class="form__label">Поиск</label>
+            <input id="" type="text" name="" class="form__input">
+            <svg class="form__clear-svg">
+               <use xlink:href="img/icons/icons.svg#input_clear"></use>
+            </svg>
+            <img class="form__icon-search" src="img/icons/icon_search.svg" alt="">
+         </div>
+         <button type="submit" class="form__button button button_transparent-white">Смотреть все</button>
+      </form>
+      <div class="search-modal__result">
+         <a href="" class="search-modal__link search-modal__link_chunk">Мужские костюмы</a>
+         <a href="" class="search-modal__link search-modal__link_chunk">Женские костюмы</a>
+         <a href="" class="search-modal__link search-modal__link_chunk">Детские костюмы</a>
+         <a href="" class="search-modal__link">Костюм утепленный «Егерь»</a>
+         <a href="" class="search-modal__link">Костюм противоэнцефалитный «Таежный»</a>
+         <a href="" class="search-modal__link">Костюм-трансформер «Путешественник»</a>
+         <a href="" class="search-modal__link">Костюм утепленный «Егерь»</a>
+         <a href="" class="search-modal__link">Костюм противоэнцефалитный «Таежный»</a>
+         <a href="" class="search-modal__link">Костюм-трансформер «Путешественник»</a>
+      </div>
+   </div>
+</div>
+	<div class="footer__container">
+		<div class="mp-footer-links"> <!-- Этот блок присутствует только на главной" -->
+			<a href="" class="mp-footer-links__item">
+				<span>Дилерам</span>
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
+				</svg>
+			</a>
+			<a href="" class="mp-footer-links__item">
+				<span>Розничный интернет-магазин</span>
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
+				</svg>
+			</a>
+			<a href="" class="mp-footer-links__item">
+				<span>Адреса <br> магазинов</span>
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
+				</svg>
+			</a>
+		</div>
+		<a href="" class="footer__logo"><img src="img/logo-footer.svg" alt=""></a>
+		<div class="footer__main">
+			<div class="footer__menu">
+				<a href="" class="footer__menu-link">О бренде</a>
+				<a href="" class="footer__menu-link">Блог</a>
+				<a href="" class="footer__menu-link">Наши эксперты</a>
+				<a href="" class="footer__menu-link">Адреса магазинов</a>
+				<a href="" class="footer__menu-link">Для дилеров</a>
+				<a href="" class="footer__menu-link">Розничный интернет-магазин</a>
+				<a href="" class="footer__menu-link">Полезная информация</a>
 			</div>
-			<div class="blog-detail">
-				<div class="blog-detail__container">
-					<div class="blog-detail__date">04.03.2025</div>
-					<div class="blog-detail__content">
-						<div class="blog-detail__row">
-							<div class="blog-detail__image-ibg"><img src="img/blog-2.webp" alt=""></div>
-							<div class="blog-detail__row-text">
-								<div class="blog-detail__text">
-									<p>Спортивная одежда играет важную роль в наших тренировках и активном отдыхе, поэтому правильный уход за ней поможет сохранить ее качество и продлить срок службы. Первое, на что стоит обратить внимание, это следование инструкциям по стирке, указанным на ярлыках. Обычно рекомендуется стирать спортивные вещи при низких температурах, чтобы избежать повреждений ткани и потери эластичности. Используйте специальные моющие средства, которые не содержат агрессивных химикатов, чтобы защитить функциональные свойства ткани.</p>
-								</div>
-							</div>
-						</div>
-						<div class="blog-detail__row">
-							<div class="blog-detail__image-ibg"><img src="img/blog-3.webp" alt=""></div>
-							<div class="blog-detail__row-text">
-								<div class="blog-detail__text">
-									<p>Перед стиркой важно подготовить одежду: выверните ее наизнанку, застегните молнии и липучки, а также удалите все лишние предметы из карманов. Это поможет избежать повреждений во время стирки. Если на одежде есть серьезные загрязнения, такие как пот или грязь, можно предварительно замочить её в воде с мягким моющим средством. Такой подход значительно облегчает процесс удаления пятен во время основного цикла стирки.</p>
-								</div>
-								<div class="blog-detail__text-highlighted">Избегайте использования сушилки, так как интенсивный нагрев может повредить ткань и сделать одежду менее удобной.</div>
-							</div>
-						</div>
-						<div class="blog-detail__row">
-							<div class="blog-detail__image-ibg"><img src="img/blog-4.webp" alt=""></div>
-							<div class="blog-detail__row-text">
-								<div class="blog-detail__text">
-									<p>Лучше всего развесить одежду на воздухе, давая ей высохнуть естественным образом. Это не только сохраняет форму изделия, но и позволяет избежать появления неприятных запахов, которые могут возникнуть после сушки в закрытом пространстве.</p>
-									<p>Хранение спортивной одежды также бывает важным аспектом ухода. Убедитесь, что вещи полностью сухие перед тем, как убрать их в шкаф. Лучше всего складывать одежду в складные контейнеры или использовать специальные вешалки для сохранения формы. Также старайтесь сортировать одежду по видам применения (например, для бега, фитнеса или туризма), чтобы легко находить нужные вещи. Следуя этим простым советам, вы сможете наслаждаться своей спортивной экипировкой долгое время.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="about-video">
-				<div class="about-video__wrapper" data-popup="#video" data-popup-youtube="JNZX-oBJVEs">
-					<div class="about-video__image-ibg"><img src="img/about-video-2.webp" alt=""></div>
-					<div class="about-video__logo"><img src="img/logo_header.svg" alt=""></div>
-					<div class="about-video__title">Уход за спортивной одеждой</div>
-				</div>
-			</div>
-			<div class="page__container">
-				<div class="share-block">
-					<div class="share-block__row">
-						<div class="share-block__text">Поделиться статьей в мессенджерах и соцсетях:</div>
-						<!-- uSocial -->
-						<script async src="https://usocial.pro/usocial/usocial.js?uid=4a153ce207f61697&v=6.1.5&_v=20241211203553" data-script="usocial" charset="utf-8"></script>
-						<div class="uSocial-Share" data-pid="5ea0332829db6cc5b760c785d813075d" data-type="share" data-options="round-rect,style1,default,absolute,horizontal,size48,eachCounter0,counter0,mobile_position_right" data-social="telegram,vk,wa,ok"></div>
-						<!-- /uSocial -->
-					</div>
-				</div>
-			</div>
-			<div class="products-slider">
-				<div class="products-slider__container">
-					<div class="products-slider__header">
-						<div class="products-slider__title">Вас может заинтересовать</div>
-						<div class="products-slider__fraction"></div>
-					</div>
-					<div class="products-slider__slider swiper">
-						<div class="products-slider__wrapper swiper-wrapper">
-							<div class="products-slider__slide swiper-slide">
-								<div class="product-card">
-									<div class="product-card__top">
-										<div class="product-card__labels">
-											<span class="product-card__label product-card__label_pink">Новинка</span>
-											<span class="product-card__label product-card__label_blue">Хит</span>
-										</div>
-										<a href="" class="product-card__image-ibg"><img src="img/product-card__image-1.webp" alt=""></a>
-									</div>
-									<div class="product-card__content">
-										<a href="" class="product-card__name">Ветровка для осеннего отдыха</a>
-										<div class="product-card__price">
-											<div class="product-card__price-num">4 900 ₽</div>
-											<div class="product-card__price-text">– розничная цена</div>
-										</div>
-										<div class="product-card__buttons">
-											<a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
-											<button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="products-slider__slide swiper-slide">
-								<div class="product-card">
-									<div class="product-card__top">
-										<div class="product-card__labels">
-											<span class="product-card__label product-card__label_pink">Новинка</span>
-											<span class="product-card__label product-card__label_blue">Хит</span>
-										</div>
-										<a href="" class="product-card__image-ibg"><img src="img/product-card__image-2.webp" alt=""></a>
-									</div>
-									<div class="product-card__content">
-										<a href="" class="product-card__name">Ветровка для хайкинга</a>
-										<div class="product-card__price">
-											<div class="product-card__price-num">4 900 ₽</div>
-											<div class="product-card__price-text">– розничная цена</div>
-										</div>
-										<div class="product-card__buttons">
-											<a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
-											<button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="products-slider__slide swiper-slide">
-								<div class="product-card">
-									<div class="product-card__top">
-										<div class="product-card__labels">
-											<span class="product-card__label product-card__label_pink">Новинка</span>
-											<span class="product-card__label product-card__label_blue">Хит</span>
-										</div>
-										<a href="" class="product-card__image-ibg"><img src="img/product-card__image-3.webp" alt=""></a>
-									</div>
-									<div class="product-card__content">
-										<a href="" class="product-card__name">Куртка спортивная утепленная</a>
-										<div class="product-card__price">
-											<div class="product-card__price-num">4 900 ₽</div>
-											<div class="product-card__price-text">– розничная цена</div>
-										</div>
-										<div class="product-card__buttons">
-											<a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
-											<button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="products-slider__slide swiper-slide">
-								<div class="product-card">
-									<div class="product-card__top">
-										<div class="product-card__labels">
-											<span class="product-card__label product-card__label_pink">Новинка</span>
-											<span class="product-card__label product-card__label_blue">Хит</span>
-										</div>
-										<a href="" class="product-card__image-ibg"><img src="img/product-card__image-4.webp" alt=""></a>
-									</div>
-									<div class="product-card__content">
-										<a href="" class="product-card__name">Костюм флисовый</a>
-										<div class="product-card__price">
-											<div class="product-card__price-num">4 900 ₽</div>
-											<div class="product-card__price-text">– розничная цена</div>
-										</div>
-										<div class="product-card__buttons">
-											<a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
-											<button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="products-slider__slide swiper-slide">
-								<div class="product-card">
-									<div class="product-card__top">
-										<div class="product-card__labels">
-											<span class="product-card__label product-card__label_pink">Новинка</span>
-											<span class="product-card__label product-card__label_blue">Хит</span>
-										</div>
-										<a href="" class="product-card__image-ibg"><img src="img/product-card__image-5.webp" alt=""></a>
-									</div>
-									<div class="product-card__content">
-										<a href="" class="product-card__name">Ветровка для осеннего отдыха</a>
-										<div class="product-card__price">
-											<div class="product-card__price-num">4 900 ₽</div>
-											<div class="product-card__price-text">– розничная цена</div>
-										</div>
-										<div class="product-card__buttons">
-											<a href="" class="product-card__btn button button_transparent-black">Купить оптом</a>
-											<button type="button" class="product-card__btn button button_transparent-black">Купить в розницу</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<button type="button" class="swiper-button-prev">
+			<div class="footer__contacts">
+				<div class="footer__contacts-title">Контакты</div>
+				<div class="footer__contacts-links">
+					<a href="tel:88005007552" class="footer__contacts-link">
 						<svg>
-							<use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+							<use xlink:href="img/icons/icons.svg#icon_phone"></use>
+						</svg>
+						<span>8 800 500 75 52</span>
+					</a>
+					<a href="tel:88005007552" class="footer__contacts-link">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon_phone"></use>
+						</svg>
+						<span>8 800 500 75 52</span>
+					</a>
+					<a href="mailto:rosomaha@mail.ru" class="footer__contacts-link">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon_mail"></use>
+						</svg>
+						<span>rosomaha@mail.ru</span>
+					</a>
+				</div>
+			</div>
+			<div class="footer__social">
+				<div class="footer__social-title">Мы в соцсетях</div>
+				<div class="footer__social-links">
+					<a href="" class="footer__social-link">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon_telegram"></use>
+						</svg>
+					</a>
+					<a href="" class="footer__social-link">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon_vk"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="footer__mob-copyright"></div>
+		</div>
+		<div class="footer__bottom copyright">
+			<div class="copyright__wrapper">
+				<div class="copyright__body">
+					<div class="copyright__item" data-da=".footer__mob-copyright, 679.98">
+						<span class="js-copyright-year">2023</span>
+						© Росомаха
+						<script>window.onload = () => document.querySelector('.js-copyright-year').innerText = new Date().getFullYear();</script>
+					</div>
+					<a href="" class="copyright__item" data-da=".footer__mob-copyright, 679.98">Политика конфиденциальности</a>
+					<a href="" class="copyright__item" data-da=".footer__mob-copyright, 679.98">Согласие на обработку персональных данных</a>
+					<a href="https://websalt.ru" target="_blank" class="copyright__item">Создание сайта
+						<svg class="copyright__svg">
+							<use xlink:href="img/icons/icons.svg#logo_salt"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</div>
+<div class="popup-box">
+	<div id="video" aria-hidden="true" class="popup video-popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<button data-close type="button" class="popup__close">
+						<svg class="popup__close-svg">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
 						</svg>
 					</button>
-					<button type="button" class="swiper-button-next">
-						<svg>
-							<use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+				</div>
+				<div data-popup-youtube-place class="popup__video"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Модалка шаринга -->
+	<div id="share-popup" aria-hidden="true" class="popup popup_center">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Поделиться</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
 						</svg>
 					</button>
 				</div>
-			</div>
-			<div class="blog blog_read-more">
-				<div class="blog__container">
-					<div class="blog__main-title">Читайте также</div>
-					<div class="blog__row">
-						<div class="blog__item">
-							<div class="blog__date">04.03.2025</div>
-							<a href="" class="blog__title">Технологии тканей: Как выбрать правильную одежду для активного отдыха</a>
-							<div class="blog__descr">Обзор различных типов тканей, их свойств и преимуществ для спорта и туризма</div>
-							<div class="blog__image-ibg"><img src="img/blog-2.webp" alt=""></div>
+				<div class="popup__main">
+					<div class="share">
+						<div class="share__social">
+							<!-- uSocial -->
+							<script async src="https://usocial.pro/usocial/usocial.js?uid=21cd4b58eaf61697&v=6.1.5&_v=20250122182843" data-script="usocial" charset="utf-8"></script>
+							<div class="uSocial-Share" data-pid="b7450283dbc9e941ee22b283d6036804" data-type="share" data-options="round-rect,style1,default,absolute,horizontal,size48,eachCounter0,counter0,nomobile,mobile_position_right" data-social="vk,ok,telegram,wa,vi"></div>
+							<!-- /uSocial -->
 						</div>
-						<div class="blog__item">
-							<div class="blog__date">04.03.2025</div>
-							<a href="" class="blog__title">Технологии тканей: Как выбрать правильную одежду для активного отдыха</a>
-							<div class="blog__descr">Обзор различных типов тканей, их свойств и преимуществ для спорта и туризма</div>
-							<div class="blog__image-ibg"><img src="img/blog-2.webp" alt=""></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</main>
-		<footer class="footer">
-			<div class="animated-bg-ibg"><img src="img/animated-bg.webp" alt=""></div>
-			<div class="left-sidebar">
-				<a href="" class="left-sidebar__logo">
-					<svg class="left-sidebar__logo-main">
-						<use xlink:href="img/icons/icons.svg#logo_sidebar"></use>
-					</svg>
-				</a>
-				<button type="button" class="left-sidebar__button left-sidebar__button_search js-search-btn">
-					<svg>
-						<use xlink:href="img/icons/icons.svg#icon_search"></use>
-					</svg>
-					<span>Поиск</span>
-				</button>
-				<button type="button" class="left-sidebar__button left-sidebar__button_catalog js-catalog-btn">
-					<svg>
-						<use xlink:href="img/icons/icons.svg#icon_burger"></use>
-					</svg>
-					<span>Каталог</span>
-				</button>
-				<div class="left-sidebar__links" data-da=".menu-mobile__links, 991.98,2">
-					<a href="" class="left-sidebar__link">О бренде</a>
-					<a href="" class="left-sidebar__link">Наши эксперты</a>
-					<a href="" class="left-sidebar__link">Блог</a>
-					<a href="" class="left-sidebar__link">Контакты</a>
-				</div>
-			</div>
-			<div class="sidebar-catalog">
-				<div class="sidebar-catalog__wrapper">
-					<div class="sidebar-catalog__title">Каталог</div>
-					<div class="sidebar-catalog__content">
-						<div class="sidebar-catalog__top">
-							<div class="sidebar-catalog__chunk">
-								<a href="" class="sidebar-catalog__chunk-link">Мужская одежда</a>
-								<div class="sidebar-catalog__links">
-									<a href="" class="sidebar-catalog__link">Куртки</a>
-									<a href="" class="sidebar-catalog__link">Брюки</a>
-									<a href="" class="sidebar-catalog__link">Костюмы</a>
-									<a href="" class="sidebar-catalog__link">Комбинезоны</a>
-									<a href="" class="sidebar-catalog__link">Жилеты</a>
-									<a href="" class="sidebar-catalog__link">Одежда из флиса и футера</a>
-									<a href="" class="sidebar-catalog__link">Термобелье</a>
-									<a href="" class="sidebar-catalog__link">Футболки, толстовки</a>
-								</div>
-							</div>
-							<div class="sidebar-catalog__chunk">
-								<a href="" class="sidebar-catalog__chunk-link">Женская одежда</a>
-								<div class="sidebar-catalog__links">
-									<a href="" class="sidebar-catalog__link">Куртки</a>
-									<a href="" class="sidebar-catalog__link">Брюки</a>
-									<a href="" class="sidebar-catalog__link">Костюмы</a>
-									<a href="" class="sidebar-catalog__link">Комбинезоны</a>
-									<a href="" class="sidebar-catalog__link">Жилеты</a>
-									<a href="" class="sidebar-catalog__link">Одежда из флиса и футера</a>
-									<a href="" class="sidebar-catalog__link">Термобелье</a>
-									<a href="" class="sidebar-catalog__link">Футболки, толстовки</a>
-								</div>
-							</div>
-							<div class="sidebar-catalog__chunk">
-								<a href="" class="sidebar-catalog__chunk-link">Детская одежда</a>
-								<div class="sidebar-catalog__links">
-									<a href="" class="sidebar-catalog__link">Куртки</a>
-									<a href="" class="sidebar-catalog__link">Брюки</a>
-									<a href="" class="sidebar-catalog__link">Костюмы</a>
-									<a href="" class="sidebar-catalog__link">Комбинезоны</a>
-									<a href="" class="sidebar-catalog__link">Жилеты</a>
-									<a href="" class="sidebar-catalog__link">Одежда из флиса и футера</a>
-									<a href="" class="sidebar-catalog__link">Термобелье</a>
-									<a href="" class="sidebar-catalog__link">Футболки, толстовки</a>
-								</div>
-							</div>
-							<div class="sidebar-catalog__chunk">
-								<a href="" class="sidebar-catalog__chunk-link">Аксессуары</a>
-								<div class="sidebar-catalog__links">
-									<a href="" class="sidebar-catalog__link">Шапки</a>
-									<a href="" class="sidebar-catalog__link">Балаклавы</a>
-									<a href="" class="sidebar-catalog__link">Перчатки</a>
-									<a href="" class="sidebar-catalog__link">Варежки</a>
-									<a href="" class="sidebar-catalog__link">Рукавицы</a>
-									<a href="" class="sidebar-catalog__link">Носки</a>
-								</div>
-							</div>
-						</div>
-						<div class="sidebar-catalog__bottom">
-							<a href="" class="sidebar-catalog__chunk-link">Одежда для туризма и отдыха</a>
-							<a href="" class="sidebar-catalog__chunk-link">Одежда горнолыжная</a>
-							<a href="" class="sidebar-catalog__chunk-link">Одежда для охоты и рыбалки</a>
-							<a href="" class="sidebar-catalog__chunk-link">Одежда от клещей</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="search-modal">
-				<button type="button" class="search-modal__close js-search-close">
-					<svg>
-						<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-					</svg>
-				</button>
-				<div class="search-modal__wrapper">
-					<form action="" class="search-modal__form form">
-						<div class="form__line">
-							<label for="" class="form__label">Поиск</label>
-							<input id="" type="text" name="" class="form__input">
-							<svg class="form__clear-svg">
-								<use xlink:href="img/icons/icons.svg#input_clear"></use>
-							</svg>
-							<img class="form__icon-search" src="img/icons/icon_search.svg" alt="">
-						</div>
-						<button type="submit" class="form__button button button_transparent-white">Смотреть все</button>
-					</form>
-					<div class="search-modal__result">
-						<a href="" class="search-modal__link search-modal__link_chunk">Мужские костюмы</a>
-						<a href="" class="search-modal__link search-modal__link_chunk">Женские костюмы</a>
-						<a href="" class="search-modal__link search-modal__link_chunk">Детские костюмы</a>
-						<a href="" class="search-modal__link">Костюм утепленный «Егерь»</a>
-						<a href="" class="search-modal__link">Костюм противоэнцефалитный «Таежный»</a>
-						<a href="" class="search-modal__link">Костюм-трансформер «Путешественник»</a>
-						<a href="" class="search-modal__link">Костюм утепленный «Егерь»</a>
-						<a href="" class="search-modal__link">Костюм противоэнцефалитный «Таежный»</a>
-						<a href="" class="search-modal__link">Костюм-трансформер «Путешественник»</a>
-					</div>
-				</div>
-			</div>
-			<div class="footer__container">
-				<div class="mp-footer-links"> <!-- Этот блок присутствует только на главной" -->
-					<a href="" class="mp-footer-links__item">
-						<span>Дилерам</span>
-						<svg>
-							<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
-						</svg>
-					</a>
-					<a href="" class="mp-footer-links__item">
-						<span>Розничный интернет-магазин</span>
-						<svg>
-							<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
-						</svg>
-					</a>
-					<a href="" class="mp-footer-links__item">
-						<span>Адреса <br> магазинов</span>
-						<svg>
-							<use xlink:href="img/icons/icons.svg#icon_arrow"></use>
-						</svg>
-					</a>
-				</div>
-				<a href="" class="footer__logo"><img src="img/logo-footer.svg" alt=""></a>
-				<div class="footer__main">
-					<div class="footer__menu">
-						<a href="" class="footer__menu-link">О бренде</a>
-						<a href="" class="footer__menu-link">Блог</a>
-						<a href="" class="footer__menu-link">Наши эксперты</a>
-						<a href="" class="footer__menu-link">Адреса магазинов</a>
-						<a href="" class="footer__menu-link">Для дилеров</a>
-						<a href="" class="footer__menu-link">Розничный интернет-магазин</a>
-						<a href="" class="footer__menu-link">Полезная информация</a>
-					</div>
-					<div class="footer__contacts">
-						<div class="footer__contacts-title">Контакты</div>
-						<div class="footer__contacts-links">
-							<a href="tel:88005007552" class="footer__contacts-link">
-								<svg>
-									<use xlink:href="img/icons/icons.svg#icon_phone"></use>
+						<div class="share__copy-url">
+							<div class="form__line">
+								<label for="copyUrl" class="form__label">Ссылка на товар</label>
+								<input autocomplete="off" id="copyUrl" type="text" class="share__input form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
 								</svg>
-								<span>8 800 500 75 52</span>
-							</a>
-							<a href="mailto:rosomaha@mail.ru" class="footer__contacts-link">
-								<svg>
-									<use xlink:href="img/icons/icons.svg#icon_mail"></use>
-								</svg>
-								<span>rosomaha@mail.ru</span>
-							</a>
-						</div>
-					</div>
-					<div class="footer__social">
-						<div class="footer__social-title">Мы в соцсетях</div>
-						<div class="footer__social-links">
-							<a href="" class="footer__social-link">
-								<svg>
-									<use xlink:href="img/icons/icons.svg#icon_telegram"></use>
-								</svg>
-							</a>
-							<a href="" class="footer__social-link">
-								<svg>
-									<use xlink:href="img/icons/icons.svg#icon_vk"></use>
-								</svg>
-							</a>
-						</div>
-					</div>
-					<div class="footer__mob-copyright"></div>
-				</div>
-				<div class="footer__bottom copyright">
-					<div class="copyright__wrapper">
-						<div class="copyright__body">
-							<div class="copyright__item" data-da=".footer__mob-copyright, 679.98">
-								<span class="js-copyright-year">2023</span>
-								© Росомаха
-								<script>
-									window.onload = () => document.querySelector('.js-copyright-year').innerText = new Date().getFullYear();
-								</script>
 							</div>
-							<a href="" class="copyright__item" data-da=".footer__mob-copyright, 679.98">Политика конфиденциальности</a>
-							<a href="" class="copyright__item" data-da=".footer__mob-copyright, 679.98">Согласие на обработку персональных данных</a>
-							<a href="https://websalt.ru" target="_blank" class="copyright__item">Создание сайта
-								<svg class="copyright__svg">
-									<use xlink:href="img/icons/icons.svg#logo_salt"></use>
-								</svg>
-							</a>
+							<button type="button" class="share__button">Скопировать ссылку</button>
 						</div>
 					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
 	</div>
-	<div class="popup-box">
-		<div id="video" aria-hidden="true" class="popup video-popup">
-			<div class="popup__wrapper">
-				<div class="popup__content">
-					<div class="popup__header">
-						<button data-close type="button" class="popup__close">
-							<svg class="popup__close-svg">
-								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-							</svg>
-						</button>
-					</div>
-					<div data-popup-youtube-place class="popup__video"></div>
+	<!-- Модалка шаринга -->
+	<!-- Спасибо -->
+	<div id="thanks" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Спасибо за обращение</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="popup__close-svg">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<div class="popup__text">Наш менеджер скоро свяжется с вами</div>
+					<button data-close type="button" class="popup__close-button button button_color-white">
+						Хорошо
+					</button>
 				</div>
 			</div>
 		</div>
-		<!-- Модалка шаринга -->
-		<div id="share-popup" aria-hidden="true" class="popup popup_center">
-			<div class="popup__wrapper">
-				<div class="popup__content">
-					<div class="popup__header">
-						<div class="popup__title">Поделиться</div>
-						<button data-close type="button" class="popup__close">
-							<svg class="">
-								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-							</svg>
-						</button>
-					</div>
-					<div class="popup__main">
-						<div class="share">
-							<div class="share__social">
-								<!-- uSocial -->
-								<script async src="https://usocial.pro/usocial/usocial.js?uid=21cd4b58eaf61697&v=6.1.5&_v=20241211203553" data-script="usocial" charset="utf-8"></script>
-								<div class="uSocial-Share" data-pid="b7450283dbc9e941ee22b283d6036804" data-type="share" data-options="round-rect,style1,default,absolute,horizontal,size48,eachCounter0,counter0,nomobile,mobile_position_right" data-social="vk,ok,telegram,wa,vi"></div>
-								<!-- /uSocial -->
-							</div>
-							<div class="share__copy-url">
-								<div class="form__line">
-									<label for="copyUrl" class="form__label">Ссылка на товар</label>
-									<input autocomplete="off" id="copyUrl" type="text" class="share__input form__input">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<button type="button" class="share__button">Скопировать ссылку</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Модалка шаринга -->
-		<!-- Спасибо -->
-		<div id="thanks" aria-hidden="true" class="popup">
-			<div class="popup__wrapper">
-				<div class="popup__content">
-					<div class="popup__header">
-						<div class="popup__title">Спасибо за обращение</div>
-						<button data-close type="button" class="popup__close">
-							<svg class="popup__close-svg">
-								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-							</svg>
-						</button>
-					</div>
-					<div class="popup__main">
-						<div class="popup__text">Наш менеджер скоро свяжется с вами</div>
-						<button data-close type="button" class="popup__close-button button button_color-white">
-							Хорошо
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Спасибо -->
-		<!-- Заказать звонок -->
-		<div id="callback" aria-hidden="true" class="popup">
-			<div class="popup__wrapper">
-				<div class="popup__content">
-					<div class="popup__header">
-						<div class="popup__title">Купить оптом</div>
-						<button data-close type="button" class="popup__close">
-							<svg class="">
-								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-							</svg>
-						</button>
-					</div>
-					<div class="popup__main">
-						<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
-						<div class="popup__form">
-							<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
-								<div class="form__line">
-									<label for="" class="form__label">Ваше имя *</label>
-									<input id="" type="text" class="form__input" required>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Контактный телефон *</label>
-									<input id="" type="tel" class="form__input js_phone" required>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">E-mail</label>
-									<input id="" type="email" name="" class="form__input">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">ИНН</label>
-									<input id="" type="text" name="" class="form__input">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Комментарий</label>
-									<textarea id="" autocomplete="off" name="" placeholder="" class="form__input"></textarea>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__footer">
-									<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
-									<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Заказать звонок -->
-		<!-- Стать амбассодором -->
-		<div id="invite" aria-hidden="true" class="popup">
-			<div class="popup__wrapper">
-				<div class="popup__content">
-					<div class="popup__header">
-						<div class="popup__title">Стать амбассодором</div>
-						<button data-close type="button" class="popup__close">
-							<svg class="">
-								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-							</svg>
-						</button>
-					</div>
-					<div class="popup__main">
-						<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
-						<div class="popup__form">
-							<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
-								<div class="form__line">
-									<label for="" class="form__label">Ваше имя *</label>
-									<input id="" type="text" class="form__input" required>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Ссылка на соц.сети</label>
-									<input id="" type="text" name="" class="form__input">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Номер телефона *</label>
-									<input id="" type="tel" class="form__input js_phone" required>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">E-mail</label>
-									<input id="" type="email" name="" class="form__input">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__footer">
-									<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
-									<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Стать амбассодором -->
-		<!-- Получить коммерческое предложение -->
-		<div id="get-offer" aria-hidden="true" class="popup">
-			<div class="popup__wrapper">
-				<div class="popup__content">
-					<div class="popup__header">
-						<div class="popup__title">Получить коммерческое предложение</div>
-						<button data-close type="button" class="popup__close">
-							<svg class="">
-								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-							</svg>
-						</button>
-					</div>
-					<div class="popup__main">
-						<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
-						<div class="popup__form">
-							<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
-								<div class="form__line">
-									<label for="" class="form__label">Ваше имя *</label>
-									<input id="" type="text" class="form__input" required>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Контактный телефон *</label>
-									<input id="" type="tel" class="form__input js_phone" required>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">E-mail</label>
-									<input id="" type="email" name="" class="form__input">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">ИНН</label>
-									<input id="" type="text" name="" class="form__input">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Комментарий</label>
-									<textarea id="" autocomplete="off" name="" placeholder="" class="form__input"></textarea>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__footer">
-									<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
-									<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Получить коммерческое предложение -->
 	</div>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20241211203553" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="js/app.min.js?_v=20241211203553"></script>
+	<!-- Спасибо -->
+	<!-- Заказать звонок -->
+	<div id="callback" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Купить оптом</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
+					<div class="popup__form">
+						<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
+							<div class="form__line">
+								<label for="" class="form__label">Ваше имя *</label>
+								<input id="" type="text" class="form__input" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Контактный телефон *</label>
+								<input id="" type="tel" class="form__input js_phone" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">E-mail</label>
+								<input id="" type="email" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">ИНН</label>
+								<input id="" type="text" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Комментарий</label>
+								<textarea id="" autocomplete="off" name="" placeholder="" class="form__input"></textarea>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__footer">
+								<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
+								<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Заказать звонок -->
+	<!-- Стать амбассодором -->
+	<div id="invite" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Стать амбассодором</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
+					<div class="popup__form">
+						<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
+							<div class="form__line">
+								<label for="" class="form__label">Ваше имя *</label>
+								<input id="" type="text" class="form__input" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Ссылка на соц.сети</label>
+								<input id="" type="text" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Номер телефона *</label>
+								<input id="" type="tel" class="form__input js_phone" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">E-mail</label>
+								<input id="" type="email" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__footer">
+								<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
+								<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Стать амбассодором -->
+	<!-- Получить коммерческое предложение -->
+	<div id="get-offer" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Получить коммерческое предложение</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<div class="popup__text">Пожалуйста, заполните все поля. Наш специалист свяжется с вами в ближайшее время.</div>
+					<div class="popup__form">
+						<form action="" data-parsley-validate data-parsley-trigger="change" class="form">
+							<div class="form__line">
+								<label for="" class="form__label">Ваше имя *</label>
+								<input id="" type="text" class="form__input" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Контактный телефон *</label>
+								<input id="" type="tel" class="form__input js_phone" required>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">E-mail</label>
+								<input id="" type="email" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">ИНН</label>
+								<input id="" type="text" name="" class="form__input">
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Комментарий</label>
+								<textarea id="" autocomplete="off" name="" placeholder="" class="form__input"></textarea>
+								<svg class="form__clear-svg">
+									<use xlink:href="img/icons/icons.svg#input_clear"></use>
+								</svg>
+							</div>
+							<div class="form__footer">
+								<button type="submit" class="form__button button button_color-white">Отправить заявку</button>
+								<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку персональных данных</a></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Получить коммерческое предложение -->
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250122182843" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="js/app.min.js?_v=20250122182843"></script>
 </body>
 
 </html>

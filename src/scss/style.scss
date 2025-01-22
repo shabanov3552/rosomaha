@@ -85,6 +85,7 @@ $responsiveType: 1;
 body {
 
 	// Скролл заблокирован
+	.lg-on &,
 	.lock & {
 		overflow: hidden;
 		touch-action: none;
@@ -262,3 +263,11 @@ body {
 @import "blog";
 @import "experts";
 @import "contacts";
+
+.lg-sub-html {
+	display: none;
+}
+
+* {
+	// outline: 1px solid red !important;
+}

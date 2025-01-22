@@ -43,6 +43,7 @@
       &_big {
          font-size: 24px;
          line-height: 150%;
+         display: none;
       }
    }
 
@@ -154,6 +155,7 @@
    // .experts__footer
 
    &__footer {
+      display: none !important;
       margin-bottom: rem(56);
 
       @media (max-width:$lg) {
@@ -219,6 +221,7 @@
    // .experts__invite
 
    &__invite {
+      display: none !important;
       background: url(../img/experts__invite.png) center/cover no-repeat;
       padding: rem(59) 0;
       padding-left: rem(92);

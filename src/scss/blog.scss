@@ -286,12 +286,12 @@
       white-space: nowrap;
 
       &:hover {
-         background: #14325a;
+         background: #424549;
          color: #fff;
       }
 
       &._active {
-         background: #14325a;
+         background: #424549;
          color: #fff;
       }
    }
@@ -350,15 +350,15 @@
    // .blog-detail__image-ibg
 
    &__image-ibg {
-      max-height: 423px;
+      height: 423px;
       width: auto;
 
       @media (max-width:$xxl) {
-         max-height: 330px;
+         height: 330px;
       }
 
       @media (max-width:$xl) {
-         max-height: 250px;
+         height: 250px;
       }
 
       @media (max-width:$lg) {

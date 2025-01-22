@@ -20,6 +20,26 @@
 }
 
 //========================================================================================================================================================
+@media (min-width:$lg) {
+
+	.search-open,
+	.sidebar-open {
+		body:not(:has(.main-page)) .header {
+			position: static;
+			z-index: auto;
+
+			.header__logo {
+				position: relative;
+				z-index: 12;
+
+				svg use {
+					fill: #fff;
+				}
+			}
+		}
+	}
+
+}
 
 .header {
 	padding: rem(31) 0;
@@ -59,25 +79,31 @@
 		display: flex;
 		justify-content: space-between;
 
-		.main-page & {
-			padding-left: rem(52);
-			padding-right: rem(90);
-			max-width: 100%;
 
-			@media (max-width:$pc) {
-				padding-right: rem(50);
-			}
+		padding-left: rem(52);
+		padding-right: rem(75);
+		max-width: 100%;
 
-			@media (max-width:$xl) {
-				padding-left: rem(39);
-				padding-right: rem(38);
-			}
-
-			@media (max-width:$lg) {
-				padding-left: rem(20);
-				padding-right: rem(31);
+		@media (min-width:$pc) {
+			.main-page & {
+				padding-right: rem(90);
 			}
 		}
+
+		@media (max-width:$pc) {
+			padding-right: rem(50);
+		}
+
+		@media (max-width:$xl) {
+			padding-left: rem(39);
+			padding-right: rem(38);
+		}
+
+		@media (max-width:$lg) {
+			padding-left: rem(20);
+			padding-right: rem(31);
+		}
+
 
 		@media (max-width:$lg) {
 			height: 100%;
@@ -113,6 +139,11 @@
 			height: 20px;
 		}
 
+		@media (max-width:$xxs) {
+			width: 100px;
+			height: 15px;
+		}
+
 		use {
 			fill: #535559;
 
@@ -138,6 +169,11 @@
 
 		@media (min-width:$lg) {
 			display: none;
+		}
+
+		@media (max-width:$xxs) {
+			width: 45px;
+			height: 18px;
 		}
 	}
 
@@ -170,12 +206,14 @@
 
 		&_telegram {
 			margin-left: rem(23);
+			display: none;
 		}
 
 		// .header__link_vk
 
 		&_vk {
 			margin-left: rem(34);
+			display: none;
 		}
 	}
 
@@ -236,19 +274,27 @@
 
 		.dropdown__block {
 			background-color: #fff;
-			padding: rem(5) rem(10);
+			// padding: rem(5) rem(0);
 			width: max-content;
 			border-radius: 5px;
 			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 			top: calc(100% + 10px);
+			right: 0;
 
-			a {
-				display: block;
+			@media (max-width:$lg) {
+				right: auto;
+				left: 0;
+			}
+		}
 
-				@media (any-hover: hover) {
-					&:hover {
-						text-decoration: underline;
-					}
+		.dropdown__link {
+			margin: rem(5) 0;
+			padding: rem(5) rem(10);
+			display: block;
+
+			@media (any-hover: hover) {
+				&:hover {
+					background: rgba(0, 0, 0, 0.2);
 				}
 			}
 		}

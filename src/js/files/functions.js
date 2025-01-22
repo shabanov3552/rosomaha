@@ -527,7 +527,6 @@ export function showMore(targetBlocks) {
 			const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 3;
 			const showMoreItems = showMoreContent.children;
 			if (showMoreContent.children.length <= showMoreTypeValue) {
-				console.log(showMoreItems);
 				return
 			}
 			for (let index = 1; index < showMoreItems.length; index++) {

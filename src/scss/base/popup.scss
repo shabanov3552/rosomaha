@@ -275,10 +275,15 @@ body::after {
 			width: 499px;
 			height: 194px;
 			background: url(../img/logo-popup.svg);
+			pointer-events: none;
 		}
 
 		#share-popup & {
 			max-width: 460px;
+
+			&::before {
+				content: none;
+			}
 		}
 
 		.size-table & {
@@ -320,6 +325,10 @@ body::after {
 		border: none;
 		align-items: flex-start;
 		padding-bottom: rem(40);
+
+		#share-popup & {
+			padding: rem(40) rem(20) rem(40) rem(40);
+		}
 
 		@media (min-width:$md) {
 			padding-top: rem(69);
@@ -363,6 +372,8 @@ body::after {
 
 		#share-popup & {
 			height: auto;
+			padding: rem(40) rem(40);
+			padding-top: 0;
 		}
 
 		.size-table & {
@@ -455,7 +466,30 @@ body::after {
 	// .share__button
 
 	&__button {
+		height: 46px;
+		margin-top: rem(25);
 		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 3px;
+		font-weight: 400;
+		font-size: 16px;
+		text-align: center;
+		padding-right: rem(10);
+		padding-left: rem(10);
+		padding-top: rem(9);
+		padding-bottom: rem(10);
+		border: 1px solid #000;
+		transition: all 0.3s ease 0s;
+		background: #fff;
+		color: #000;
+		border-color: #fff;
+
+		&:hover {
+			background: transparent;
+			color: #fff;
+		}
 	}
 }
 
